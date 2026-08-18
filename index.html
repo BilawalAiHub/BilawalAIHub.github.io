@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Bilawal AI Hub - Premium AI Tools">
 <title>Bilawal AI Hub</title>
 
 <style>
@@ -14,26 +14,13 @@
 }
 
 :root{
-  --bg:#070b12;
-  --panel:#101722;
-  --panel2:#151d29;
-  --border:#263142;
-  --text:#fff;
-  --muted:#8994a5;
-  --accent:#00d9ff;
-  --accent2:#735cff;
-  --danger:#ff4d67;
-  --shadow:0 20px 60px rgba(0,0,0,.35);
-}
-
-body.light{
-  --bg:#f4f7fb;
-  --panel:#fff;
-  --panel2:#eef2f7;
-  --border:#dce2eb;
-  --text:#101522;
-  --muted:#687386;
-  --shadow:0 20px 50px rgba(0,0,0,.08);
+  --black:#050505;
+  --black2:#0b0b0b;
+  --gold:#d4af37;
+  --gold2:#ffe58a;
+  --text:#ffffff;
+  --muted:#999;
+  --line:#302817;
 }
 
 html{
@@ -42,433 +29,287 @@ html{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
+  background:var(--black);
   color:var(--text);
   min-height:100vh;
-  overflow-x:hidden;
 }
 
-button,
-input{
-  font-family:inherit;
-}
+/* ================= INTRO ================= */
 
-button{
-  cursor:pointer;
-}
-
-.hidden{
-  display:none!important;
-}
-
-/* TOP BAR */
-
-.topbar{
-  height:70px;
+#intro{
   position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1000;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 22px;
-  background:rgba(7,11,18,.82);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
-}
-
-body.light .topbar{
-  background:rgba(255,255,255,.85);
-}
-
-.logo{
-  font-size:23px;
-  font-weight:800;
-}
-
-.logo span{
-  color:var(--accent);
-}
-
-.top-actions{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.icon-btn{
-  width:40px;
-  height:40px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  background:var(--panel);
-  color:var(--text);
-  font-size:18px;
-}
-
-.user-mini{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  border:1px solid var(--border);
-  background:var(--panel);
-  padding:7px 10px;
-  border-radius:14px;
-  color:var(--text);
-}
-
-.avatar{
-  width:30px;
-  height:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#000;
-  font-weight:bold;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-  position:fixed;
-  top:70px;
-  left:0;
-  bottom:0;
-  width:230px;
-  padding:20px 14px;
-  border-right:1px solid var(--border);
-  background:var(--panel);
-  z-index:900;
-}
-
-.nav-title{
-  color:var(--muted);
-  font-size:11px;
-  text-transform:uppercase;
-  margin:15px 10px 8px;
-  letter-spacing:1px;
-}
-
-.nav-btn{
-  width:100%;
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  padding:12px;
-  border-radius:12px;
-  text-align:left;
-  margin-bottom:4px;
-  font-size:14px;
-}
-
-.nav-btn:hover,
-.nav-btn.active{
-  color:var(--text);
-  background:var(--panel2);
-}
-
-.nav-btn.active{
-  border-left:3px solid var(--accent);
-}
-
-/* MAIN */
-
-.main{
-  margin-left:230px;
-  padding:95px 28px 50px;
-  max-width:1500px;
-}
-
-.page{
-  display:none;
-}
-
-.page.active{
-  display:block;
-}
-
-/* HERO */
-
-.hero{
-  position:relative;
-  overflow:hidden;
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:55px 35px;
+  inset:0;
+  z-index:99999;
   background:
-    radial-gradient(circle at 10% 20%,rgba(0,217,255,.15),transparent 30%),
-    radial-gradient(circle at 90% 80%,rgba(115,92,255,.15),transparent 30%),
-    var(--panel);
-  box-shadow:var(--shadow);
+    radial-gradient(circle at center,#211a08 0%,#080705 42%,#000 100%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+  animation:introOut 1s ease 5s forwards;
 }
 
-.hero small{
-  color:var(--accent);
-  font-weight:bold;
+.stars{
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle,#d4af37 1px,transparent 1px),
+    radial-gradient(circle,#fff0a0 1px,transparent 1px);
+  background-size:100px 100px,170px 170px;
+  opacity:.18;
+  animation:starsMove 12s linear infinite;
 }
 
-.hero h1{
-  margin-top:15px;
-  font-size:clamp(35px,5vw,65px);
+@keyframes starsMove{
+  from{transform:translateY(0)}
+  to{transform:translateY(-120px)}
+}
+
+.intro-box{
+  position:relative;
+  z-index:2;
+  width:92%;
   max-width:800px;
+  animation:introBox 4.8s ease forwards;
 }
 
-.gradient{
-  background:linear-gradient(90deg,#00d9ff,#735cff,#00d9ff);
-  background-size:200%;
+@keyframes introBox{
+  0%{
+    opacity:0;
+    transform:scale(.88);
+  }
+  15%{
+    opacity:1;
+    transform:scale(1);
+  }
+  82%{
+    opacity:1;
+    transform:scale(1);
+  }
+  100%{
+    opacity:0;
+    transform:scale(1.05);
+  }
+}
+
+@keyframes introOut{
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+
+/* Crown */
+
+.crown{
+  position:relative;
+  width:180px;
+  height:130px;
+  margin:auto;
+  filter:
+    drop-shadow(0 0 8px #d4af37)
+    drop-shadow(0 0 25px rgba(212,175,55,.5));
+  animation:crownFloat 3s ease-in-out infinite;
+}
+
+@keyframes crownFloat{
+  0%,100%{
+    transform:translateY(0) rotateY(-3deg);
+  }
+  50%{
+    transform:translateY(-9px) rotateY(3deg);
+  }
+}
+
+.crown-base{
+  position:absolute;
+  left:20px;
+  bottom:12px;
+  width:140px;
+  height:45px;
+  border-radius:5px 5px 20px 20px;
+  background:
+    linear-gradient(
+      180deg,
+      #fff1a0 0%,
+      #d4af37 35%,
+      #8a6414 70%,
+      #f0cf58 100%
+    );
+  box-shadow:
+    inset 0 5px 8px rgba(255,255,255,.45),
+    inset 0 -8px 10px rgba(0,0,0,.35);
+}
+
+.crown-piece{
+  position:absolute;
+  bottom:48px;
+  width:0;
+  height:0;
+  border-left:23px solid transparent;
+  border-right:23px solid transparent;
+  border-bottom:70px solid #d4af37;
+}
+
+.c1{left:16px;transform:rotate(-7deg)}
+.c2{left:50px}
+.c3{left:84px}
+.c4{left:118px;transform:rotate(7deg)}
+
+.crown-piece:after{
+  content:"";
+  position:absolute;
+  left:-5px;
+  top:10px;
+  width:7px;
+  height:47px;
+  background:linear-gradient(#fff,transparent);
+  opacity:.55;
+  transform:rotate(20deg);
+}
+
+.jewel{
+  position:absolute;
+  left:78px;
+  bottom:29px;
+  width:26px;
+  height:26px;
+  transform:rotate(45deg);
+  background:
+    radial-gradient(circle at 30% 25%,
+      #fff,
+      #ffe786 20%,
+      #d4af37 55%,
+      #70500c);
+  box-shadow:
+    0 0 12px #ffe47b,
+    0 0 30px rgba(255,220,80,.7);
+}
+
+.intro-line{
+  width:0;
+  height:1px;
+  margin:8px auto 25px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #d4af37,
+    #fff2a0,
+    #d4af37,
+    transparent
+  );
+  animation:lineGrow 1.5s ease 1s forwards;
+}
+
+@keyframes lineGrow{
+  to{width:340px}
+}
+
+.intro-title{
+  font-size:clamp(30px,7vw,64px);
+  letter-spacing:4px;
+  line-height:1.15;
+  font-weight:900;
+  color:#f5e8ad;
+}
+
+.intro-title span{
+  display:block;
+  background:linear-gradient(
+    90deg,
+    #8c6817,
+    #fff1a0,
+    #d4af37,
+    #fff1a0,
+    #8c6817
+  );
+  background-size:250%;
   -webkit-background-clip:text;
   color:transparent;
-  animation:gradient 4s infinite linear;
+  animation:goldMove 3s linear infinite;
 }
 
-@keyframes gradient{
+@keyframes goldMove{
   from{background-position:0}
-  to{background-position:200%}
+  to{background-position:250%}
 }
 
-.hero p{
-  color:var(--muted);
-  max-width:700px;
-  margin-top:15px;
+.tagline{
+  color:#b8a66d;
+  font-size:14px;
+  letter-spacing:2px;
   line-height:1.7;
+  margin:18px auto;
+  max-width:620px;
 }
 
-.hero-buttons{
-  margin-top:25px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+.loading{
+  width:220px;
+  height:2px;
+  background:#2a220f;
+  margin:28px auto;
+  overflow:hidden;
 }
 
-.btn{
-  border:0;
-  border-radius:13px;
-  padding:13px 19px;
-  font-weight:bold;
+.loading div{
+  width:0;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    #876212,
+    #fff0a0,
+    #d4af37
+  );
+  box-shadow:0 0 12px #d4af37;
+  animation:loading 4s linear forwards;
 }
 
-.primary{
-  background:var(--accent);
-  color:#000;
+@keyframes loading{
+  to{width:100%}
 }
 
-.secondary{
-  background:var(--panel2);
-  color:var(--text);
-  border:1px solid var(--border);
-}
+/* ================= AUTH ================= */
 
-/* STATS */
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin:22px 0;
-}
-
-.stat{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:20px;
-}
-
-.stat b{
-  display:block;
-  font-size:25px;
-  color:var(--accent);
-}
-
-.stat span{
-  display:block;
-  margin-top:5px;
-  color:var(--muted);
-  font-size:12px;
-}
-
-/* SECTION */
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:35px 0 17px;
-}
-
-.section-head h2{
-  font-size:23px;
-}
-
-.section-head span{
-  color:var(--muted);
-  font-size:12px;
-}
-
-/* SEARCH */
-
-.search{
-  width:100%;
-  padding:15px 17px;
-  border:1px solid var(--border);
-  background:var(--panel);
-  color:var(--text);
-  border-radius:14px;
-  outline:none;
-  font-size:15px;
-}
-
-.search:focus{
-  border-color:var(--accent);
-}
-
-/* CATEGORIES */
-
-.categories{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  margin-bottom:18px;
-  padding-bottom:5px;
-}
-
-.category{
-  flex-shrink:0;
-  border:1px solid var(--border);
-  background:var(--panel);
-  color:var(--muted);
-  padding:9px 14px;
-  border-radius:22px;
-}
-
-.category.active,
-.category:hover{
-  background:var(--accent);
-  color:#000;
-}
-
-/* TOOL GRID */
-
-.tools{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.tool{
-  position:relative;
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:19px;
-  padding:19px;
-  transition:.25s;
-}
-
-.tool:hover{
-  transform:translateY(-5px);
-  border-color:var(--accent);
-}
-
-.tool-icon{
-  width:50px;
-  height:50px;
-  border-radius:15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-  background:var(--panel2);
-  margin-bottom:15px;
-}
-
-.tool h3{
-  font-size:17px;
-  margin-bottom:7px;
-}
-
-.tool p{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
-  min-height:37px;
-}
-
-.tool-bottom{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:16px;
-}
-
-.open{
-  border:0;
-  text-decoration:none;
-  background:var(--accent);
-  color:#000;
-  padding:8px 13px;
-  border-radius:18px;
-  font-size:12px;
-  font-weight:bold;
-}
-
-.star{
-  border:1px solid var(--border);
-  background:var(--panel2);
-  color:#888;
-  width:34px;
-  height:34px;
-  border-radius:50%;
-}
-
-.star.saved{
-  color:#ffd43b;
-}
-
-/* LOGIN */
-
-.auth-page{
+#auth{
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
   padding:20px;
   background:
-    radial-gradient(circle at 20% 20%,rgba(0,217,255,.1),transparent 35%),
-    radial-gradient(circle at 80% 80%,rgba(115,92,255,.1),transparent 35%),
-    var(--bg);
+    radial-gradient(circle at 20% 20%,rgba(212,175,55,.12),transparent 35%),
+    radial-gradient(circle at 80% 80%,rgba(212,175,55,.08),transparent 35%),
+    #050505;
 }
 
-.auth-box{
+.auth-card{
   width:100%;
-  max-width:440px;
-  background:var(--panel);
-  border:1px solid var(--border);
+  max-width:430px;
+  padding:32px;
+  background:#0d0d0d;
+  border:1px solid var(--line);
   border-radius:25px;
-  padding:30px;
-  box-shadow:var(--shadow);
+  box-shadow:0 30px 100px #000;
 }
 
 .auth-logo{
   text-align:center;
   font-size:28px;
-  font-weight:bold;
+  font-weight:900;
   margin-bottom:25px;
 }
 
 .auth-logo span{
-  color:var(--accent);
+  color:var(--gold);
 }
 
-.auth-box h2{
+.auth-card h2{
   margin-bottom:8px;
 }
 
-.auth-box > p{
-  color:var(--muted);
+.auth-sub{
+  color:#777;
   font-size:13px;
   margin-bottom:22px;
 }
@@ -480,140 +321,431 @@ body.light .topbar{
 .field label{
   display:block;
   font-size:12px;
-  color:var(--muted);
+  color:#999;
   margin-bottom:7px;
 }
 
 .field input{
   width:100%;
-  padding:13px;
-  background:var(--panel2);
-  border:1px solid var(--border);
-  color:var(--text);
-  outline:none;
+  padding:14px;
+  background:#151515;
+  border:1px solid var(--line);
   border-radius:12px;
+  outline:none;
+  color:white;
 }
 
 .field input:focus{
-  border-color:var(--accent);
+  border-color:var(--gold);
 }
 
-.full-btn{
+.gold-btn{
   width:100%;
-  padding:13px;
+  padding:14px;
   border:0;
   border-radius:12px;
-  background:var(--accent);
-  color:#000;
+  background:linear-gradient(135deg,#967018,#f2d56e,#b18420);
+  color:#050505;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .switch{
   text-align:center;
-  margin-top:18px;
-  color:var(--muted);
+  color:#777;
   font-size:13px;
+  margin-top:18px;
 }
 
 .switch button{
   border:0;
   background:none;
-  color:var(--accent);
+  color:var(--gold2);
+  cursor:pointer;
 }
 
-/* DASHBOARD */
+/* ================= APP ================= */
 
-.profile-card{
+.hidden{
+  display:none !important;
+}
+
+.topbar{
+  height:68px;
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  z-index:1000;
   display:flex;
   align-items:center;
-  gap:18px;
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:25px;
+  justify-content:space-between;
+  padding:0 22px;
+  background:rgba(5,5,5,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
 }
 
-.big-avatar{
-  width:75px;
-  height:75px;
-  border-radius:22px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
+.logo{
+  font-size:21px;
+  font-weight:900;
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.icon-btn{
+  width:40px;
+  height:40px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:#101010;
+  color:var(--gold2);
+  cursor:pointer;
+}
+
+.profile-mini{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#101010;
+  border:1px solid var(--line);
+  padding:5px 10px 5px 5px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.avatar{
+  width:31px;
+  height:31px;
+  border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
+  background:linear-gradient(135deg,#8e6817,#ffe38b,#a77b18);
   color:#000;
-  font-size:28px;
   font-weight:bold;
 }
 
-.profile-card p{
-  color:var(--muted);
+/* Sidebar */
+
+.sidebar{
+  position:fixed;
+  top:68px;
+  bottom:0;
+  left:0;
+  width:230px;
+  background:#080808;
+  border-right:1px solid var(--line);
+  padding:20px 12px;
+  z-index:900;
+}
+
+.side-title{
+  font-size:10px;
+  letter-spacing:2px;
+  color:#6f5c2b;
+  margin:16px 9px 9px;
+}
+
+.nav{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:#888;
+  text-align:left;
+  padding:12px;
+  border-radius:11px;
+  margin-bottom:4px;
+  cursor:pointer;
+}
+
+.nav:hover,
+.nav.active{
+  color:var(--gold2);
+  background:#17130a;
+  border-left:3px solid var(--gold);
+}
+
+/* Main */
+
+main{
+  margin-left:230px;
+  padding:95px 28px 50px;
+  max-width:1550px;
+}
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+/* Hero */
+
+.hero{
+  padding:55px 38px;
+  border:1px solid var(--line);
+  border-radius:27px;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(212,175,55,.14),transparent 30%),
+    radial-gradient(circle at 90% 80%,rgba(212,175,55,.07),transparent 30%),
+    #0b0b0b;
+}
+
+.hero-label{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,70px);
+  line-height:1.05;
+  margin-top:15px;
+}
+
+.gold{
+  background:linear-gradient(
+    90deg,
+    #927019,
+    #fff0a0,
+    #d4af37,
+    #fff0a0
+  );
+  background-size:200%;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:goldMove 4s linear infinite;
+}
+
+.hero p{
+  max-width:720px;
+  color:#999;
+  line-height:1.7;
+  margin-top:18px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:27px;
+}
+
+.hero-btn{
+  padding:13px 20px;
+  border-radius:12px;
+  border:0;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.primary{
+  background:linear-gradient(135deg,#9c741d,#f3d46b);
+  color:#000;
+}
+
+.secondary{
+  background:#14120c;
+  color:var(--gold2);
+  border:1px solid var(--line);
+}
+
+/* Stats */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin:20px 0;
+}
+
+.stat{
+  padding:20px;
+  background:#0d0d0d;
+  border:1px solid var(--line);
+  border-radius:17px;
+}
+
+.stat b{
+  display:block;
+  font-size:25px;
+  color:var(--gold);
+}
+
+.stat span{
+  display:block;
+  color:#777;
+  font-size:12px;
   margin-top:5px;
 }
 
-/* SETTINGS */
+/* Section */
 
-.setting{
+.section-title{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px;
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:15px;
-  margin-bottom:10px;
+  margin:34px 0 17px;
 }
 
-.setting p{
-  color:var(--muted);
+.section-title h2{
+  font-size:23px;
+}
+
+.section-title span{
+  color:#666;
   font-size:12px;
-  margin-top:4px;
 }
 
-.toggle{
-  width:48px;
-  height:27px;
-  border:0;
-  border-radius:30px;
-  background:#384251;
-  position:relative;
+/* Search */
+
+.search{
+  width:100%;
+  padding:16px;
+  background:#0d0d0d;
+  border:1px solid var(--line);
+  color:white;
+  border-radius:14px;
+  outline:none;
+  font-size:15px;
 }
 
-.toggle:after{
-  content:"";
-  position:absolute;
-  width:21px;
-  height:21px;
-  top:3px;
-  left:4px;
+.search:focus{
+  border-color:var(--gold);
+}
+
+/* Categories */
+
+.categories{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:14px 0;
+}
+
+.category{
+  white-space:nowrap;
+  padding:9px 15px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:#0d0d0d;
+  color:#888;
+  cursor:pointer;
+}
+
+.category.active,
+.category:hover{
+  background:var(--gold);
+  color:#000;
+}
+
+/* Tool cards */
+
+.tools{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.tool{
+  padding:19px;
+  border:1px solid var(--line);
+  border-radius:19px;
+  background:linear-gradient(145deg,#11100d,#080808);
+  transition:.25s;
+}
+
+.tool:hover{
+  transform:translateY(-5px);
+  border-color:var(--gold);
+  box-shadow:0 15px 45px rgba(212,175,55,.08);
+}
+
+.tool-icon{
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:#18140b;
+  border:1px solid #322816;
+  font-size:27px;
+  margin-bottom:14px;
+}
+
+.tool h3{
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.tool p{
+  color:#858585;
+  font-size:12px;
+  line-height:1.5;
+  min-height:38px;
+}
+
+.tool-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:15px;
+}
+
+.open{
+  text-decoration:none;
+  color:#000;
+  background:linear-gradient(135deg,#a4791b,#f0d46c);
+  padding:8px 13px;
+  border-radius:17px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.star{
+  width:35px;
+  height:35px;
   border-radius:50%;
-  background:white;
-  transition:.2s;
+  border:1px solid var(--line);
+  background:#15130c;
+  color:#777;
+  cursor:pointer;
+  font-size:18px;
 }
 
-.toggle.on{
-  background:var(--accent);
+.star.saved{
+  color:#ffd63f;
 }
 
-.toggle.on:after{
-  left:23px;
-}
-
-/* AI CHAT */
+/* Chat */
 
 .chat{
-  height:500px;
+  height:520px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  background:#0d0d0d;
   display:flex;
   flex-direction:column;
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:22px;
-  overflow:hidden;
 }
 
 .chat-head{
   padding:17px;
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid var(--line);
+  color:var(--gold2);
   font-weight:bold;
 }
 
@@ -624,22 +756,22 @@ body.light .topbar{
 }
 
 .message{
-  max-width:75%;
+  max-width:78%;
   padding:12px 15px;
-  border-radius:15px;
+  border-radius:14px;
   margin-bottom:12px;
-  line-height:1.5;
   font-size:14px;
+  line-height:1.5;
 }
 
 .bot{
-  background:var(--panel2);
-  color:var(--text);
+  background:#17140d;
+  border:1px solid var(--line);
 }
 
 .me{
   margin-left:auto;
-  background:var(--accent);
+  background:linear-gradient(135deg,#a67a1b,#ebcf68);
   color:#000;
 }
 
@@ -647,51 +779,131 @@ body.light .topbar{
   display:flex;
   gap:8px;
   padding:12px;
-  border-top:1px solid var(--border);
+  border-top:1px solid var(--line);
 }
 
 .chat-input input{
   flex:1;
-  border:1px solid var(--border);
-  background:var(--panel2);
-  color:var(--text);
   padding:13px;
-  border-radius:12px;
+  background:#151515;
+  border:1px solid var(--line);
+  color:white;
+  border-radius:11px;
   outline:none;
 }
 
 .chat-input button{
-  border:0;
-  background:var(--accent);
-  color:#000;
-  border-radius:12px;
   padding:0 18px;
+  border:0;
+  border-radius:11px;
+  background:var(--gold);
+  color:#000;
   font-weight:bold;
 }
 
-/* TOAST */
+/* Profile */
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:25px;
+  border:1px solid var(--line);
+  background:#0d0d0d;
+  border-radius:20px;
+}
+
+.big-avatar{
+  width:75px;
+  height:75px;
+  border-radius:21px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:bold;
+  color:#000;
+  background:linear-gradient(135deg,#916b18,#ffe58a,#aa7b18);
+}
+
+.profile p{
+  color:#777;
+  margin-top:5px;
+}
+
+/* Settings */
+
+.setting{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:18px;
+  background:#0d0d0d;
+  border:1px solid var(--line);
+  border-radius:15px;
+  margin-bottom:10px;
+}
+
+.setting p{
+  color:#777;
+  font-size:12px;
+  margin-top:5px;
+}
+
+.small-btn{
+  padding:9px 14px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#15130d;
+  color:var(--gold2);
+  cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+  text-align:center;
+  margin-top:55px;
+  padding:40px 15px 80px;
+  border-top:1px solid var(--line);
+  color:#666;
+  line-height:1.8;
+}
+
+footer strong{
+  color:var(--gold);
+}
+
+.developer{
+  color:#d4af37;
+  font-size:17px;
+  font-weight:bold;
+}
+
+/* Toast */
 
 .toast{
   position:fixed;
-  right:20px;
-  bottom:25px;
-  background:var(--panel);
-  border:1px solid var(--border);
-  padding:14px 18px;
-  border-radius:14px;
-  box-shadow:var(--shadow);
+  right:18px;
+  bottom:20px;
   z-index:5000;
-  transform:translateY(100px);
+  background:#15130d;
+  border:1px solid var(--line);
+  color:white;
+  padding:13px 17px;
+  border-radius:12px;
   opacity:0;
+  transform:translateY(30px);
   transition:.3s;
 }
 
 .toast.show{
-  transform:translateY(0);
   opacity:1;
+  transform:translateY(0);
 }
 
-/* MOBILE */
+/* Mobile */
 
 .mobile-nav{
   display:none;
@@ -709,7 +921,7 @@ body.light .topbar{
     display:none;
   }
 
-  .main{
+  main{
     margin-left:0;
     padding:90px 15px 90px;
   }
@@ -728,53 +940,50 @@ body.light .topbar{
     left:0;
     right:0;
     bottom:0;
-    z-index:2000;
-    background:rgba(8,12,18,.95);
-    backdrop-filter:blur(15px);
-    border-top:1px solid var(--border);
+    z-index:3000;
+    background:rgba(6,6,6,.97);
+    border-top:1px solid var(--line);
     justify-content:space-around;
-    padding:9px 5px;
-  }
-
-  body.light .mobile-nav{
-    background:rgba(255,255,255,.95);
+    padding:8px 3px;
   }
 
   .mobile-nav button{
-    border:0;
     background:none;
-    color:var(--muted);
-    font-size:11px;
+    border:0;
+    color:#888;
+    font-size:10px;
   }
 
-  .mobile-nav button div{
+  .mobile-nav div{
     font-size:20px;
-    margin-bottom:3px;
+    margin-bottom:2px;
   }
-
 }
 
 @media(max-width:500px){
 
   .topbar{
-    padding:0 13px;
+    padding:0 11px;
   }
 
   .logo{
-    font-size:19px;
+    font-size:18px;
+  }
+
+  .profile-mini span{
+    display:none;
   }
 
   .hero{
-    padding:35px 20px;
+    padding:38px 20px;
   }
 
   .hero h1{
-    font-size:40px;
+    font-size:39px;
   }
 
   .tools{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+    gap:9px;
   }
 
   .tool{
@@ -789,29 +998,28 @@ body.light .topbar{
     font-size:11px;
   }
 
-  .stats{
-    gap:9px;
-  }
-
   .stat{
     padding:15px;
   }
 
   .stat b{
-    font-size:21px;
+    font-size:20px;
   }
 
-  .user-mini span{
-    display:none;
+  .intro-title{
+    letter-spacing:2px;
   }
 
-  .chat{
-    height:550px;
+  .tagline{
+    font-size:12px;
   }
 
+  .crown{
+    transform:scale(.85);
+  }
 }
 
-@media(max-width:340px){
+@media(max-width:350px){
   .tools{
     grid-template-columns:1fr;
   }
@@ -821,33 +1029,83 @@ body.light .topbar{
 
 <body>
 
-<!-- AUTH -->
+<!-- ================= PREMIUM INTRO ================= -->
 
-<div id="authScreen" class="auth-page">
+<div id="intro">
 
-  <div class="auth-box">
+  <div class="stars"></div>
 
-    <div class="auth-logo">
-      Bilawal <span>AI Hub</span> 🤖
+  <div class="intro-box">
+
+    <div class="crown">
+
+      <div class="crown-piece c1"></div>
+      <div class="crown-piece c2"></div>
+      <div class="crown-piece c3"></div>
+      <div class="crown-piece c4"></div>
+
+      <div class="crown-base"></div>
+
+      <div class="jewel"></div>
+
     </div>
 
-    <div id="loginForm">
+    <div class="intro-line"></div>
 
-      <h2>Welcome Back 👋</h2>
+    <div class="intro-title">
+      WELCOME TO
+      <span>BILAWAL AI HUB</span>
+    </div>
 
-      <p>Login to continue to Bilawal AI Hub.</p>
+    <div class="tagline">
+      Where imagination meets intelligence,
+      and every idea becomes possible.
+    </div>
+
+    <div class="loading">
+      <div></div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= LOGIN / SIGNUP ================= -->
+
+<div id="auth" class="hidden">
+
+  <div class="auth-card">
+
+    <div class="auth-logo">
+      Bilawal <span>AI Hub</span>
+    </div>
+
+    <div id="loginBox">
+
+      <h2>Welcome Back</h2>
+
+      <p class="auth-sub">
+        Login and enter your AI workspace.
+      </p>
 
       <div class="field">
         <label>Email</label>
-        <input id="loginEmail" type="email" placeholder="Enter email">
+        <input
+          id="loginEmail"
+          type="email"
+          placeholder="Enter your email">
       </div>
 
       <div class="field">
         <label>Password</label>
-        <input id="loginPassword" type="password" placeholder="Enter password">
+        <input
+          id="loginPassword"
+          type="password"
+          placeholder="Enter your password">
       </div>
 
-      <button class="full-btn" onclick="login()">
+      <button class="gold-btn" onclick="login()">
         Login
       </button>
 
@@ -859,28 +1117,39 @@ body.light .topbar{
     </div>
 
 
-    <div id="signupForm" class="hidden">
+    <div id="signupBox" class="hidden">
 
-      <h2>Create Account 🚀</h2>
+      <h2>Create Account</h2>
 
-      <p>Make your Bilawal AI Hub account.</p>
+      <p class="auth-sub">
+        Join Bilawal AI Hub.
+      </p>
 
       <div class="field">
-        <label>Your Name</label>
-        <input id="signupName" type="text" placeholder="Enter your name">
+        <label>Name</label>
+        <input
+          id="signupName"
+          type="text"
+          placeholder="Enter your name">
       </div>
 
       <div class="field">
         <label>Email</label>
-        <input id="signupEmail" type="email" placeholder="Enter email">
+        <input
+          id="signupEmail"
+          type="email"
+          placeholder="Enter your email">
       </div>
 
       <div class="field">
         <label>Password</label>
-        <input id="signupPassword" type="password" placeholder="Create password">
+        <input
+          id="signupPassword"
+          type="password"
+          placeholder="Minimum 6 characters">
       </div>
 
-      <button class="full-btn" onclick="signup()">
+      <button class="gold-btn" onclick="signup()">
         Create Account
       </button>
 
@@ -896,431 +1165,441 @@ body.light .topbar{
 </div>
 
 
-<!-- APP -->
+<!-- ================= MAIN APP ================= -->
 
 <div id="app" class="hidden">
 
-  <header class="topbar">
+<header class="topbar">
 
-    <div class="logo">
-      Bilawal <span>AI Hub</span> 🤖
+  <div class="logo">
+    Bilawal <span>AI Hub</span>
+  </div>
+
+  <div class="top-right">
+
+    <button class="icon-btn" onclick="notify('Bilawal AI Hub 👑')">
+      👑
+    </button>
+
+    <button class="icon-btn" onclick="notify('Notifications are ready 🔔')">
+      🔔
+    </button>
+
+    <div class="profile-mini" onclick="openPage('dashboard')">
+      <div class="avatar" id="miniAvatar">B</div>
+      <span id="miniName">Bilawal</span>
     </div>
 
-    <div class="top-actions">
+  </div>
 
-      <button class="icon-btn" onclick="toggleTheme()">
-        🌓
+</header>
+
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+  <div class="side-title">MAIN</div>
+
+  <button class="nav active" onclick="openPage('home',this)">
+    🏠 Home
+  </button>
+
+  <button class="nav" onclick="openPage('tools',this)">
+    🛠️ AI Tools
+  </button>
+
+  <button class="nav" onclick="openPage('assistant',this)">
+    🤖 AI Assistant
+  </button>
+
+
+  <div class="side-title">MY SPACE</div>
+
+  <button class="nav" onclick="openPage('favorites',this)">
+    ⭐ Favorites
+  </button>
+
+  <button class="nav" onclick="openPage('recent',this)">
+    🕘 Recent
+  </button>
+
+  <button class="nav" onclick="openPage('dashboard',this)">
+    👤 Dashboard
+  </button>
+
+
+  <div class="side-title">SYSTEM</div>
+
+  <button class="nav" onclick="openPage('settings',this)">
+    ⚙️ Settings
+  </button>
+
+  <button class="nav" onclick="logout()">
+    🚪 Logout
+  </button>
+
+</aside>
+
+
+<main>
+
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+  <div class="hero">
+
+    <div class="hero-label">
+      BILAWAL AI HUB • PREMIUM EDITION
+    </div>
+
+    <h1>
+      Your Ideas.
+      <span class="gold">Powered by AI.</span>
+    </h1>
+
+    <p>
+      Explore powerful AI tools for writing, images,
+      video, study, coding and productivity —
+      all together in Bilawal AI Hub.
+    </p>
+
+    <div class="hero-actions">
+
+      <button
+        class="hero-btn primary"
+        onclick="openPage('tools')">
+        🚀 Explore AI Tools
       </button>
 
-      <button class="icon-btn" onclick="notify('No new notifications 🔔')">
-        🔔
-      </button>
-
-      <button class="user-mini" onclick="openPage('dashboard')">
-        <div id="miniAvatar" class="avatar">B</div>
-        <span id="miniName">Bilawal</span>
+      <button
+        class="hero-btn secondary"
+        onclick="openPage('assistant')">
+        🤖 AI Assistant
       </button>
 
     </div>
 
-  </header>
+  </div>
 
 
-  <!-- SIDEBAR -->
+  <div class="stats">
 
-  <aside class="sidebar">
+    <div class="stat">
+      <b>35+</b>
+      <span>AI Tools</span>
+    </div>
 
-    <div class="nav-title">Main</div>
+    <div class="stat">
+      <b id="favCount">0</b>
+      <span>Favorites</span>
+    </div>
 
-    <button class="nav-btn active" onclick="openPage('home',this)">
-      🏠 Home
+    <div class="stat">
+      <b id="recentCount">0</b>
+      <span>Recent Tools</span>
+    </div>
+
+    <div class="stat">
+      <b>24/7</b>
+      <span>Available</span>
+    </div>
+
+  </div>
+
+
+  <div class="section-title">
+    <h2>🔥 Featured AI Tools</h2>
+    <span>Bilawal AI Hub</span>
+  </div>
+
+  <div id="featuredTools" class="tools"></div>
+
+</section>
+
+
+<!-- TOOLS -->
+
+<section id="tools" class="page">
+
+  <div class="section-title">
+    <h2>🛠️ 35+ AI Tools</h2>
+    <span id="toolCount"></span>
+  </div>
+
+  <input
+    id="search"
+    class="search"
+    type="text"
+    placeholder="🔍 Search AI tools..."
+    oninput="renderTools()">
+
+  <div class="categories">
+
+    <button class="category active"
+      onclick="category('all',this)">
+      All
     </button>
 
-    <button class="nav-btn" onclick="openPage('tools',this)">
-      🛠️ AI Tools
+    <button class="category"
+      onclick="category('writing',this)">
+      ✍️ Writing
     </button>
 
-    <button class="nav-btn" onclick="openPage('assistant',this)">
-      🤖 AI Assistant
+    <button class="category"
+      onclick="category('image',this)">
+      🎨 Images
     </button>
 
-    <div class="nav-title">Personal</div>
-
-    <button class="nav-btn" onclick="openPage('favorites',this)">
-      ⭐ Favorites
+    <button class="category"
+      onclick="category('video',this)">
+      🎬 Video
     </button>
 
-    <button class="nav-btn" onclick="openPage('recent',this)">
-      🕘 Recent
+    <button class="category"
+      onclick="category('study',this)">
+      📚 Study
     </button>
 
-    <button class="nav-btn" onclick="openPage('dashboard',this)">
-      👤 Dashboard
+    <button class="category"
+      onclick="category('coding',this)">
+      💻 Coding
     </button>
 
-    <div class="nav-title">System</div>
-
-    <button class="nav-btn" onclick="openPage('settings',this)">
-      ⚙️ Settings
+    <button class="category"
+      onclick="category('productivity',this)">
+      ⚡ Productivity
     </button>
 
-    <button class="nav-btn" onclick="logout()">
-      🚪 Logout
-    </button>
+  </div>
 
-  </aside>
+  <div id="toolsGrid" class="tools"></div>
 
-
-  <main class="main">
+</section>
 
 
-    <!-- HOME -->
+<!-- ASSISTANT -->
 
-    <section id="home" class="page active">
+<section id="assistant" class="page">
 
-      <div class="hero">
+  <div class="section-title">
+    <h2>🤖 Bilawal AI Assistant</h2>
+  </div>
 
-        <small>⚡ NEXT GENERATION AI PLATFORM</small>
+  <div class="chat">
 
-        <h1>
-          Welcome to
-          <span class="gradient">Bilawal AI Hub</span>
-        </h1>
+    <div class="chat-head">
+      ✨ Bilawal AI Assistant
+    </div>
 
-        <p>
-          Your personal hub for discovering AI tools for writing,
-          images, videos, study, coding and productivity.
-        </p>
+    <div id="messages" class="messages">
 
-        <div class="hero-buttons">
-
-          <button class="btn primary"
-                  onclick="openPage('tools')">
-            🚀 Explore AI Tools
-          </button>
-
-          <button class="btn secondary"
-                  onclick="openPage('assistant')">
-            🤖 Ask AI Assistant
-          </button>
-
-        </div>
-
+      <div class="message bot">
+        Assalam-o-Alaikum 👋<br><br>
+        Welcome to Bilawal AI Hub!
+        Tell me what type of tool you need —
+        image, video, study, coding, writing or productivity.
       </div>
 
+    </div>
 
-      <div class="stats">
-
-        <div class="stat">
-          <b id="totalTools">12</b>
-          <span>Available Tools</span>
-        </div>
-
-        <div class="stat">
-          <b id="favCount">0</b>
-          <span>Favorites</span>
-        </div>
-
-        <div class="stat">
-          <b id="recentCount">0</b>
-          <span>Recently Used</span>
-        </div>
-
-        <div class="stat">
-          <b>24/7</b>
-          <span>Access</span>
-        </div>
-
-      </div>
-
-
-      <div class="section-head">
-        <h2>🔥 Popular Tools</h2>
-        <span>Quick access</span>
-      </div>
-
-      <div id="homeTools" class="tools"></div>
-
-    </section>
-
-
-    <!-- TOOLS -->
-
-    <section id="tools" class="page">
-
-      <div class="section-head">
-        <h2>🛠️ AI Tools</h2>
-        <span id="toolResult">All tools</span>
-      </div>
+    <div class="chat-input">
 
       <input
-        id="toolSearch"
-        class="search"
-        placeholder="🔍 Search tools..."
-        oninput="renderTools()"
-      >
+        id="chatInput"
+        placeholder="Ask something..."
+        onkeydown="if(event.key==='Enter')sendMessage()">
 
-      <div class="categories">
+      <button onclick="sendMessage()">
+        Send
+      </button>
 
-        <button class="category active"
-                onclick="setCategory('all',this)">
-          All
-        </button>
+    </div>
 
-        <button class="category"
-                onclick="setCategory('writing',this)">
-          ✍️ Writing
-        </button>
+  </div>
 
-        <button class="category"
-                onclick="setCategory('image',this)">
-          🎨 Images
-        </button>
+</section>
 
-        <button class="category"
-                onclick="setCategory('video',this)">
-          🎬 Video
-        </button>
 
-        <button class="category"
-                onclick="setCategory('study',this)">
-          📚 Study
-        </button>
+<!-- FAVORITES -->
 
-        <button class="category"
-                onclick="setCategory('coding',this)">
-          💻 Coding
-        </button>
+<section id="favorites" class="page">
 
-      </div>
+  <div class="section-title">
+    <h2>⭐ My Favorites</h2>
+    <span>Saved tools</span>
+  </div>
 
-      <div id="allTools" class="tools"></div>
+  <div id="favoritesGrid" class="tools"></div>
 
-    </section>
+</section>
 
 
-    <!-- ASSISTANT -->
+<!-- RECENT -->
 
-    <section id="assistant" class="page">
+<section id="recent" class="page">
 
-      <div class="section-head">
-        <h2>🤖 Bilawal AI Assistant</h2>
-      </div>
+  <div class="section-title">
+    <h2>🕘 Recent Tools</h2>
+    <span>Your activity</span>
+  </div>
 
-      <div class="chat">
+  <div id="recentGrid" class="tools"></div>
 
-        <div class="chat-head">
-          🤖 Bilawal AI Assistant
-        </div>
+</section>
 
-        <div id="messages" class="messages">
 
-          <div class="message bot">
-            Assalam-o-Alaikum! 👋<br><br>
-            Main Bilawal AI Hub Assistant hoon.
-            Batao tumhein kis type ka AI tool chahiye?
-          </div>
+<!-- DASHBOARD -->
 
-        </div>
+<section id="dashboard" class="page">
 
-        <div class="chat-input">
+  <div class="section-title">
+    <h2>👤 My Dashboard</h2>
+  </div>
 
-          <input
-            id="chatInput"
-            placeholder="Ask something..."
-            onkeydown="if(event.key==='Enter')sendMessage()"
-          >
+  <div class="profile">
 
-          <button onclick="sendMessage()">
-            Send
-          </button>
+    <div class="big-avatar" id="bigAvatar">
+      B
+    </div>
 
-        </div>
+    <div>
+      <h2 id="profileName">Bilawal</h2>
+      <p id="profileEmail">email@example.com</p>
+    </div>
 
-      </div>
+  </div>
 
-    </section>
+  <div class="stats">
 
+    <div class="stat">
+      <b id="dashFav">0</b>
+      <span>Favorites</span>
+    </div>
 
-    <!-- FAVORITES -->
+    <div class="stat">
+      <b id="dashRecent">0</b>
+      <span>Recent</span>
+    </div>
 
-    <section id="favorites" class="page">
+    <div class="stat">
+      <b>35+</b>
+      <span>AI Tools</span>
+    </div>
 
-      <div class="section-head">
-        <h2>⭐ My Favorites</h2>
-        <span>Saved tools</span>
-      </div>
+    <div class="stat">
+      <b>2026</b>
+      <span>Edition</span>
+    </div>
 
-      <div id="favoriteTools" class="tools"></div>
+  </div>
 
-    </section>
+</section>
 
 
-    <!-- RECENT -->
+<!-- SETTINGS -->
 
-    <section id="recent" class="page">
+<section id="settings" class="page">
 
-      <div class="section-head">
-        <h2>🕘 Recently Used</h2>
-        <span>Last opened tools</span>
-      </div>
+  <div class="section-title">
+    <h2>⚙️ Settings</h2>
+  </div>
 
-      <div id="recentTools" class="tools"></div>
+  <div class="setting">
 
-    </section>
+    <div>
+      <strong>Black & Gold Theme</strong>
+      <p>Bilawal AI Hub premium appearance.</p>
+    </div>
 
+    <span style="color:#d4af37">ACTIVE</span>
 
-    <!-- DASHBOARD -->
+  </div>
 
-    <section id="dashboard" class="page">
+  <div class="setting">
 
-      <div class="section-head">
-        <h2>👤 Dashboard</h2>
-      </div>
+    <div>
+      <strong>Clear Recent Tools</strong>
+      <p>Remove your recent tool history.</p>
+    </div>
 
-      <div class="profile-card">
-
-        <div id="bigAvatar" class="big-avatar">
-          B
-        </div>
-
-        <div>
-          <h2 id="profileName">Bilawal</h2>
-          <p id="profileEmail">email@example.com</p>
-        </div>
-
-      </div>
-
-
-      <div class="stats">
-
-        <div class="stat">
-          <b id="dashFav">0</b>
-          <span>Favorites</span>
-        </div>
-
-        <div class="stat">
-          <b id="dashRecent">0</b>
-          <span>Recent Tools</span>
-        </div>
-
-        <div class="stat">
-          <b>AI</b>
-          <span>Platform</span>
-        </div>
-
-        <div class="stat">
-          <b>2026</b>
-          <span>Member Since</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SETTINGS -->
-
-    <section id="settings" class="page">
-
-      <div class="section-head">
-        <h2>⚙️ Settings</h2>
-      </div>
-
-      <div class="setting">
-
-        <div>
-          <strong>Dark Mode</strong>
-          <p>Switch between dark and light appearance.</p>
-        </div>
-
-        <button id="themeToggle"
-                class="toggle on"
-                onclick="toggleTheme()">
-        </button>
-
-      </div>
-
-
-      <div class="setting">
-
-        <div>
-          <strong>Notifications</strong>
-          <p>Show website notifications.</p>
-        </div>
-
-        <button id="notificationToggle"
-                class="toggle on"
-                onclick="toggleNotifications()">
-        </button>
-
-      </div>
-
-
-      <div class="setting">
-
-        <div>
-          <strong>Clear Recent Tools</strong>
-          <p>Remove your recent tool history.</p>
-        </div>
-
-        <button class="btn secondary"
-                onclick="clearRecent()">
-          Clear
-        </button>
-
-      </div>
-
-
-      <div class="setting">
-
-        <div>
-          <strong>Logout</strong>
-          <p>Sign out from this device.</p>
-        </div>
-
-        <button class="btn secondary"
-                onclick="logout()">
-          Logout
-        </button>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- MOBILE NAV -->
-
-  <nav class="mobile-nav">
-
-    <button onclick="openPage('home')">
-      <div>🏠</div>
-      Home
+    <button class="small-btn" onclick="clearRecent()">
+      Clear
     </button>
 
-    <button onclick="openPage('tools')">
-      <div>🛠️</div>
-      Tools
+  </div>
+
+  <div class="setting">
+
+    <div>
+      <strong>Logout</strong>
+      <p>Sign out from this device.</p>
+    </div>
+
+    <button class="small-btn" onclick="logout()">
+      Logout
     </button>
 
-    <button onclick="openPage('assistant')">
-      <div>🤖</div>
-      AI
-    </button>
+  </div>
 
-    <button onclick="openPage('favorites')">
-      <div>⭐</div>
-      Favorites
-    </button>
+</section>
 
-    <button onclick="openPage('dashboard')">
-      <div>👤</div>
-      Profile
-    </button>
 
-  </nav>
+<!-- FOOTER -->
+
+<footer>
+
+  <strong>Bilawal AI Hub</strong><br>
+
+  Your gateway to powerful AI tools.
+
+  <br><br>
+
+  <div class="developer">
+    Developed by — Bilawal Gujar 👑
+  </div>
+
+  <br>
+
+  © 2026 Bilawal AI Hub • All Rights Reserved
+
+</footer>
+
+</main>
+
+
+<!-- MOBILE NAV -->
+
+<nav class="mobile-nav">
+
+  <button onclick="openPage('home')">
+    <div>🏠</div>
+    Home
+  </button>
+
+  <button onclick="openPage('tools')">
+    <div>🛠️</div>
+    Tools
+  </button>
+
+  <button onclick="openPage('assistant')">
+    <div>🤖</div>
+    AI
+  </button>
+
+  <button onclick="openPage('favorites')">
+    <div>⭐</div>
+    Favorites
+  </button>
+
+  <button onclick="openPage('dashboard')">
+    <div>👤</div>
+    Profile
+  </button>
+
+</nav>
 
 </div>
 
@@ -1330,137 +1609,334 @@ body.light .topbar{
 
 <script>
 
-/* =========================
-   TOOL DATABASE
-========================= */
+/* ================= AI TOOLS ================= */
 
 const tools=[
 
 {
-id:"chatgpt",
 name:"ChatGPT",
 icon:"🤖",
-category:"writing",
-description:"AI chat, writing, ideas and everyday questions.",
+cat:"writing",
+desc:"AI chat, writing and ideas.",
 url:"https://chatgpt.com/"
 },
 
 {
-id:"gemini",
-name:"Gemini",
+name:"Google Gemini",
 icon:"✨",
-category:"writing",
-description:"AI assistant for questions and productivity.",
+cat:"writing",
+desc:"Google AI assistant.",
 url:"https://gemini.google.com/"
 },
 
 {
-id:"canva",
+name:"Claude",
+icon:"🧠",
+cat:"writing",
+desc:"AI assistant for writing.",
+url:"https://claude.ai/"
+},
+
+{
+name:"Grammarly",
+icon:"📝",
+cat:"writing",
+desc:"Improve grammar and writing.",
+url:"https://www.grammarly.com/"
+},
+
+{
+name:"Jasper",
+icon:"✍️",
+cat:"writing",
+desc:"AI content creation.",
+url:"https://www.jasper.ai/"
+},
+
+{
+name:"QuillBot",
+icon:"🔄",
+cat:"writing",
+desc:"Writing and paraphrasing.",
+url:"https://quillbot.com/"
+},
+
+{
 name:"Canva",
 icon:"🎨",
-category:"image",
-description:"Design graphics, presentations and visual content.",
+cat:"image",
+desc:"Design and visual content.",
 url:"https://www.canva.com/"
 },
 
 {
-id:"adobe",
-name:"Adobe Express",
-icon:"🖼️",
-category:"image",
-description:"Create and edit images and social content.",
-url:"https://www.adobe.com/express/"
-},
-
-{
-id:"leonardo",
 name:"Leonardo AI",
 icon:"🪄",
-category:"image",
-description:"AI-powered creative image generation.",
+cat:"image",
+desc:"AI creative image generation.",
 url:"https://leonardo.ai/"
 },
 
 {
-id:"capcut",
+name:"Adobe Express",
+icon:"🖼️",
+cat:"image",
+desc:"Create and edit designs.",
+url:"https://www.adobe.com/express/"
+},
+
+{
+name:"Ideogram",
+icon:"💎",
+cat:"image",
+desc:"AI image generation.",
+url:"https://ideogram.ai/"
+},
+
+{
+name:"Pixlr",
+icon:"🌈",
+cat:"image",
+desc:"Online photo editing.",
+url:"https://pixlr.com/"
+},
+
+{
+name:"Remove.bg",
+icon:"✂️",
+cat:"image",
+desc:"Remove image backgrounds.",
+url:"https://www.remove.bg/"
+},
+
+{
 name:"CapCut",
 icon:"🎬",
-category:"video",
-description:"Video editing with creative AI features.",
+cat:"video",
+desc:"Video editing and AI tools.",
 url:"https://www.capcut.com/"
 },
 
 {
-id:"runway",
 name:"Runway",
 icon:"🎞️",
-category:"video",
-description:"Creative AI tools for video generation.",
+cat:"video",
+desc:"AI video generation.",
 url:"https://runwayml.com/"
 },
 
 {
-id:"quizlet",
+name:"InVideo",
+icon:"📹",
+cat:"video",
+desc:"Create videos with AI.",
+url:"https://invideo.io/"
+},
+
+{
+name:"VEED",
+icon:"🎥",
+cat:"video",
+desc:"Online video editing.",
+url:"https://www.veed.io/"
+},
+
+{
+name:"Descript",
+icon:"🎙️",
+cat:"video",
+desc:"Video and audio editing.",
+url:"https://www.descript.com/"
+},
+
+{
 name:"Quizlet",
 icon:"📚",
-category:"study",
-description:"Flashcards and learning assistance.",
+cat:"study",
+desc:"Flashcards and study tools.",
 url:"https://quizlet.com/"
 },
 
 {
-id:"perplexity",
 name:"Perplexity",
 icon:"🔎",
-category:"study",
-description:"AI-powered search and research assistant.",
+cat:"study",
+desc:"AI search and research.",
 url:"https://www.perplexity.ai/"
 },
 
 {
-id:"github",
+name:"WolframAlpha",
+icon:"🧮",
+cat:"study",
+desc:"Computational knowledge.",
+url:"https://www.wolframalpha.com/"
+},
+
+{
+name:"Photomath",
+icon:"➗",
+cat:"study",
+desc:"Math learning assistant.",
+url:"https://photomath.com/"
+},
+
+{
+name:"NotebookLM",
+icon:"📖",
+cat:"study",
+desc:"AI study and research.",
+url:"https://notebooklm.google.com/"
+},
+
+{
 name:"GitHub",
 icon:"💻",
-category:"coding",
-description:"Code hosting and developer collaboration.",
+cat:"coding",
+desc:"Code hosting platform.",
 url:"https://github.com/"
 },
 
 {
-id:"replit",
 name:"Replit",
 icon:"⚙️",
-category:"coding",
-description:"Build and experiment with software online.",
+cat:"coding",
+desc:"Build and run projects.",
 url:"https://replit.com/"
 },
 
 {
-id:"grammarly",
-name:"Grammarly",
-icon:"📝",
-category:"writing",
-description:"Writing, grammar and communication assistance.",
-url:"https://www.grammarly.com/"
+name:"Cursor",
+icon:"⌨️",
+cat:"coding",
+desc:"AI coding environment.",
+url:"https://cursor.com/"
+},
+
+{
+name:"CodePen",
+icon:"🖥️",
+cat:"coding",
+desc:"Web coding playground.",
+url:"https://codepen.io/"
+},
+
+{
+name:"Stack Overflow",
+icon:"🧩",
+cat:"coding",
+desc:"Developer Q&A community.",
+url:"https://stackoverflow.com/"
+},
+
+{
+name:"Notion",
+icon:"📋",
+cat:"productivity",
+desc:"Notes and organization.",
+url:"https://www.notion.so/"
+},
+
+{
+name:"Zapier",
+icon:"⚡",
+cat:"productivity",
+desc:"Automate workflows.",
+url:"https://zapier.com/"
+},
+
+{
+name:"Trello",
+icon:"📌",
+cat:"productivity",
+desc:"Organize projects and tasks.",
+url:"https://trello.com/"
+},
+
+{
+name:"Otter.ai",
+icon:"🎤",
+cat:"productivity",
+desc:"AI transcription.",
+url:"https://otter.ai/"
+},
+
+{
+name:"Gamma",
+icon:"📊",
+cat:"productivity",
+desc:"Create presentations with AI.",
+url:"https://gamma.app/"
+},
+
+{
+name:"DeepL",
+icon:"🌍",
+cat:"writing",
+desc:"AI translation tool.",
+url:"https://www.deepl.com/"
+},
+
+{
+name:"Google AI Studio",
+icon:"🧪",
+cat:"coding",
+desc:"Build with Google's AI models.",
+url:"https://aistudio.google.com/"
 }
 
 ];
 
-let currentCategory="all";
-let notifications=true;
+let selectedCategory="all";
 
 
-/* =========================
-   USER SYSTEM
-========================= */
+/* ================= STORAGE ================= */
 
-function getUsers(){
-  return JSON.parse(localStorage.getItem("bilawalUsers") || "[]");
+function users(){
+  try{
+    return JSON.parse(
+      localStorage.getItem("bilawal_users")||"[]"
+    );
+  }catch(e){
+    return [];
+  }
 }
 
-function currentUser(){
-  return JSON.parse(localStorage.getItem("bilawalCurrentUser") || "null");
+function current(){
+  try{
+    return JSON.parse(
+      localStorage.getItem("bilawal_current")||"null"
+    );
+  }catch(e){
+    return null;
+  }
 }
+
+function saveCurrent(user){
+
+  localStorage.setItem(
+    "bilawal_current",
+    JSON.stringify(user)
+  );
+
+  let list=users();
+
+  let index=list.findIndex(
+    x=>x.email===user.email
+  );
+
+  if(index>=0){
+    list[index]=user;
+  }
+
+  localStorage.setItem(
+    "bilawal_users",
+    JSON.stringify(list)
+  );
+}
+
+
+/* ================= AUTH ================= */
 
 function signup(){
 
@@ -1468,20 +1944,20 @@ function signup(){
   const email=document.getElementById("signupEmail").value.trim().toLowerCase();
   const password=document.getElementById("signupPassword").value;
 
-  if(!name || !email || !password){
+  if(!name||!email||!password){
     notify("Please fill all fields.");
     return;
   }
 
   if(password.length<6){
-    notify("Password must be at least 6 characters.");
+    notify("Password must be 6+ characters.");
     return;
   }
 
-  let users=getUsers();
+  let list=users();
 
-  if(users.some(u=>u.email===email)){
-    notify("This email is already registered.");
+  if(list.some(x=>x.email===email)){
+    notify("Account already exists.");
     return;
   }
 
@@ -1493,21 +1969,21 @@ function signup(){
     recent:[]
   };
 
-  users.push(user);
+  list.push(user);
 
   localStorage.setItem(
-    "bilawalUsers",
-    JSON.stringify(users)
+    "bilawal_users",
+    JSON.stringify(list)
   );
 
   localStorage.setItem(
-    "bilawalCurrentUser",
+    "bilawal_current",
     JSON.stringify(user)
   );
 
-  notify("Account created successfully 🚀");
-
   showApp();
+
+  notify("Account created successfully 👑");
 }
 
 
@@ -1522,106 +1998,89 @@ function login(){
     .getElementById("loginPassword")
     .value;
 
-  const users=getUsers();
-
-  const user=users.find(
-    u=>u.email===email && u.password===password
+  const user=users().find(
+    x=>x.email===email &&
+       x.password===password
   );
 
   if(!user){
-    notify("Incorrect email or password.");
+    notify("Wrong email or password.");
     return;
   }
 
   localStorage.setItem(
-    "bilawalCurrentUser",
+    "bilawal_current",
     JSON.stringify(user)
   );
 
-  notify("Welcome back 👋");
-
   showApp();
+
+  notify("Welcome back 👑");
 }
 
 
 function logout(){
 
-  localStorage.removeItem("bilawalCurrentUser");
+  localStorage.removeItem("bilawal_current");
 
   document.getElementById("app")
     .classList.add("hidden");
 
-  document.getElementById("authScreen")
+  document.getElementById("auth")
     .classList.remove("hidden");
 
   showLogin();
-
-  notify("Logged out.");
 }
 
 
 function showSignup(){
 
-  document.getElementById("loginForm")
+  document.getElementById("loginBox")
     .classList.add("hidden");
 
-  document.getElementById("signupForm")
+  document.getElementById("signupBox")
     .classList.remove("hidden");
-
 }
 
 
 function showLogin(){
 
-  document.getElementById("signupForm")
+  document.getElementById("signupBox")
     .classList.add("hidden");
 
-  document.getElementById("loginForm")
+  document.getElementById("loginBox")
     .classList.remove("hidden");
-
 }
 
 
-/* =========================
-   APP START
-========================= */
+/* ================= APP ================= */
 
 function showApp(){
 
-  const user=currentUser();
-
-  if(!user) return;
-
-  document.getElementById("authScreen")
+  document.getElementById("auth")
     .classList.add("hidden");
 
   document.getElementById("app")
     .classList.remove("hidden");
 
   updateProfile();
-
+  renderFeatured();
   renderTools();
-
-  renderHome();
-
   updateStats();
-
-  updateThemeButton();
-
 }
 
 
-/* =========================
-   PROFILE
-========================= */
+/* ================= PROFILE ================= */
 
 function updateProfile(){
 
-  const user=currentUser();
+  const user=current();
 
-  if(!user) return;
+  if(!user)return;
 
-  const letter=user.name.charAt(0).toUpperCase();
+  const letter=user.name
+    .charAt(0)
+    .toUpperCase();
 
   document.getElementById("miniName")
     .innerText=user.name;
@@ -1637,47 +2096,15 @@ function updateProfile(){
 
   document.getElementById("profileEmail")
     .innerText=user.email;
-
 }
 
 
-/* =========================
-   SAVE USER
-========================= */
-
-function saveUser(user){
-
-  localStorage.setItem(
-    "bilawalCurrentUser",
-    JSON.stringify(user)
-  );
-
-  let users=getUsers();
-
-  const index=users.findIndex(
-    u=>u.email===user.email
-  );
-
-  if(index!==-1){
-    users[index]=user;
-  }
-
-  localStorage.setItem(
-    "bilawalUsers",
-    JSON.stringify(users)
-  );
-
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
+/* ================= NAVIGATION ================= */
 
 function openPage(id,button){
 
   document.querySelectorAll(".page")
-    .forEach(page=>page.classList.remove("active"));
+    .forEach(x=>x.classList.remove("active"));
 
   const page=document.getElementById(id);
 
@@ -1685,8 +2112,8 @@ function openPage(id,button){
     page.classList.add("active");
   }
 
-  document.querySelectorAll(".nav-btn")
-    .forEach(btn=>btn.classList.remove("active"));
+  document.querySelectorAll(".nav")
+    .forEach(x=>x.classList.remove("active"));
 
   if(button){
     button.classList.add("active");
@@ -1700,305 +2127,264 @@ function openPage(id,button){
     renderRecent();
   }
 
-  if(id==="dashboard"){
-    updateProfile();
-    updateStats();
-  }
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
+  window.scrollTo(0,0);
 }
 
 
-/* =========================
-   TOOL CARD
-========================= */
+/* ================= CARD ================= */
 
-function toolCard(tool){
+function card(tool){
 
-  const user=currentUser();
+  const user=current();
 
-  const isFav=user &&
-    user.favorites.includes(tool.id);
+  const saved=user &&
+    user.favorites.includes(tool.name);
 
   return `
+    <div class="tool">
 
-  <div class="tool">
+      <div class="tool-icon">
+        ${tool.icon}
+      </div>
 
-    <div class="tool-icon">
-      ${tool.icon}
+      <h3>${tool.name}</h3>
+
+      <p>${tool.desc}</p>
+
+      <div class="tool-bottom">
+
+        <a
+          class="open"
+          href="${tool.url}"
+          target="_blank"
+          rel="noopener"
+          onclick="useTool('${tool.name}')">
+          Open Tool
+        </a>
+
+        <button
+          class="star ${saved?"saved":""}"
+          onclick="favorite('${tool.name}')">
+          ${saved?"★":"☆"}
+        </button>
+
+      </div>
+
     </div>
-
-    <h3>${tool.name}</h3>
-
-    <p>${tool.description}</p>
-
-    <div class="tool-bottom">
-
-      <a
-        class="open"
-        href="${tool.url}"
-        target="_blank"
-        onclick="useTool('${tool.id}')"
-      >
-        Open Tool
-      </a>
-
-      <button
-        class="star ${isFav?'saved':''}"
-        onclick="toggleFavorite('${tool.id}')"
-      >
-        ${isFav?'★':'☆'}
-      </button>
-
-    </div>
-
-  </div>
-
   `;
-
 }
 
 
-/* =========================
-   RENDER TOOLS
-========================= */
+/* ================= TOOLS ================= */
+
+function renderFeatured(){
+
+  const box=document.getElementById("featuredTools");
+
+  if(!box)return;
+
+  box.innerHTML=
+    tools.slice(0,8)
+    .map(card)
+    .join("");
+}
+
 
 function renderTools(){
 
-  const box=document.getElementById("allTools");
+  const box=document.getElementById("toolsGrid");
 
-  if(!box) return;
+  if(!box)return;
 
-  const search=
-    (document.getElementById("toolSearch")?.value || "")
+  const search=document
+    .getElementById("search")
+    .value
     .toLowerCase()
     .trim();
 
-  let filtered=tools.filter(tool=>{
+  const filtered=tools.filter(tool=>{
 
     const categoryMatch=
-      currentCategory==="all" ||
-      tool.category===currentCategory;
+      selectedCategory==="all" ||
+      tool.cat===selectedCategory;
 
     const searchMatch=
       tool.name.toLowerCase().includes(search) ||
-      tool.description.toLowerCase().includes(search);
+      tool.desc.toLowerCase().includes(search);
 
     return categoryMatch && searchMatch;
-
   });
 
-  box.innerHTML=
-    filtered.length
-    ? filtered.map(toolCard).join("")
-    : `<p style="color:var(--muted)">No tools found.</p>`;
+  box.innerHTML=filtered.length
+    ?filtered.map(card).join("")
+    :"<p style='color:#777'>No tool found.</p>";
 
-  document.getElementById("toolResult").innerText=
-    filtered.length+" tools found";
-
+  document.getElementById("toolCount")
+    .innerText=filtered.length+" tools";
 }
 
 
-function renderHome(){
+function category(cat,button){
 
-  const box=document.getElementById("homeTools");
-
-  box.innerHTML=
-    tools.slice(0,4)
-      .map(toolCard)
-      .join("");
-
-}
-
-
-/* =========================
-   CATEGORY
-========================= */
-
-function setCategory(category,button){
-
-  currentCategory=category;
+  selectedCategory=cat;
 
   document.querySelectorAll(".category")
-    .forEach(b=>b.classList.remove("active"));
+    .forEach(x=>x.classList.remove("active"));
 
   button.classList.add("active");
 
   renderTools();
-
 }
 
 
-/* =========================
-   FAVORITES
-========================= */
+/* ================= FAVORITES ================= */
 
-function toggleFavorite(id){
+function favorite(name){
 
-  const user=currentUser();
+  const user=current();
 
-  if(!user) return;
+  if(!user)return;
 
-  if(user.favorites.includes(id)){
+  if(user.favorites.includes(name)){
 
     user.favorites=
-      user.favorites.filter(x=>x!==id);
+      user.favorites.filter(x=>x!==name);
 
     notify("Removed from favorites.");
 
   }else{
 
-    user.favorites.push(id);
+    user.favorites.push(name);
 
     notify("Added to favorites ⭐");
-
   }
 
-  saveUser(user);
+  saveCurrent(user);
 
+  renderFeatured();
   renderTools();
-
-  renderHome();
-
   renderFavorites();
-
   updateStats();
-
 }
 
 
 function renderFavorites(){
 
-  const box=document.getElementById("favoriteTools");
+  const box=document.getElementById("favoritesGrid");
 
-  const user=currentUser();
+  const user=current();
 
-  if(!user) return;
+  if(!user)return;
 
-  const favs=
-    tools.filter(t=>user.favorites.includes(t.id));
+  const list=tools.filter(
+    x=>user.favorites.includes(x.name)
+  );
 
-  box.innerHTML=
-    favs.length
-    ? favs.map(toolCard).join("")
-    : `<p style="color:var(--muted)">
-       No favorite tools yet. Tap ☆ on any tool.
-       </p>`;
-
+  box.innerHTML=list.length
+    ?list.map(card).join("")
+    :"<p style='color:#777'>No favorites yet. Tap ☆ on a tool.</p>";
 }
 
 
-/* =========================
-   RECENT
-========================= */
+/* ================= RECENT ================= */
 
-function useTool(id){
+function useTool(name){
 
-  const user=currentUser();
+  const user=current();
 
-  if(!user) return;
+  if(!user)return;
 
   user.recent=
-    user.recent.filter(x=>x!==id);
+    user.recent.filter(x=>x!==name);
 
-  user.recent.unshift(id);
+  user.recent.unshift(name);
 
   user.recent=
-    user.recent.slice(0,8);
+    user.recent.slice(0,10);
 
-  saveUser(user);
+  saveCurrent(user);
 
   updateStats();
-
 }
 
 
 function renderRecent(){
 
-  const box=document.getElementById("recentTools");
+  const box=document.getElementById("recentGrid");
 
-  const user=currentUser();
+  const user=current();
 
-  if(!user) return;
+  if(!user)return;
 
-  const recent=
-    user.recent
-      .map(id=>tools.find(t=>t.id===id))
-      .filter(Boolean);
+  const list=user.recent
+    .map(name=>tools.find(x=>x.name===name))
+    .filter(Boolean);
 
-  box.innerHTML=
-    recent.length
-    ? recent.map(toolCard).join("")
-    : `<p style="color:var(--muted)">
-       You haven't opened any tools yet.
-       </p>`;
-
+  box.innerHTML=list.length
+    ?list.map(card).join("")
+    :"<p style='color:#777'>No recent tools.</p>";
 }
 
 
 function clearRecent(){
 
-  const user=currentUser();
+  const user=current();
 
-  if(!user) return;
+  if(!user)return;
 
   user.recent=[];
 
-  saveUser(user);
+  saveCurrent(user);
 
   renderRecent();
-
   updateStats();
 
-  notify("Recent history cleared.");
+  notify("Recent tools cleared.");
 }
 
 
-/* =========================
-   STATS
-========================= */
+/* ================= STATS ================= */
 
 function updateStats(){
 
-  const user=currentUser();
+  const user=current();
 
-  if(!user) return;
+  if(!user)return;
 
   const fav=user.favorites.length;
   const recent=user.recent.length;
 
-  document.getElementById("favCount").innerText=fav;
-  document.getElementById("recentCount").innerText=recent;
+  document.getElementById("favCount")
+    .innerText=fav;
 
-  document.getElementById("dashFav").innerText=fav;
-  document.getElementById("dashRecent").innerText=recent;
+  document.getElementById("recentCount")
+    .innerText=recent;
 
+  document.getElementById("dashFav")
+    .innerText=fav;
+
+  document.getElementById("dashRecent")
+    .innerText=recent;
 }
 
 
-/* =========================
-   AI ASSISTANT
-========================= */
+/* ================= ASSISTANT ================= */
 
 function sendMessage(){
 
-  const input=
-    document.getElementById("chatInput");
+  const input=document
+    .getElementById("chatInput");
 
   const text=input.value.trim();
 
-  if(!text) return;
+  if(!text)return;
 
-  const messages=
-    document.getElementById("messages");
+  const messages=document
+    .getElementById("messages");
 
   messages.innerHTML+=`
     <div class="message me">
-      ${escapeHTML(text)}
+      ${safe(text)}
     </div>
   `;
 
@@ -2006,185 +2392,63 @@ function sendMessage(){
 
   setTimeout(()=>{
 
-    const reply=getAIReply(text);
-
     messages.innerHTML+=`
       <div class="message bot">
-        ${reply}
+        ${reply(text)}
       </div>
     `;
 
     messages.scrollTop=
       messages.scrollHeight;
 
-  },500);
-
+  },450);
 }
 
 
-function getAIReply(text){
+function reply(text){
 
   const q=text.toLowerCase();
 
-  if(
-    q.includes("image") ||
-    q.includes("photo") ||
-    q.includes("picture")
-  ){
-
-    return `
-      🎨 Image ke liye <b>Canva</b> ya
-      <b>Leonardo AI</b> try karo.
-    `;
-
+  if(q.includes("image")||q.includes("photo")){
+    return "🎨 Images ke liye Canva, Leonardo AI, Ideogram aur Adobe Express try karo.";
   }
 
-  if(
-    q.includes("video") ||
-    q.includes("edit")
-  ){
-
-    return `
-      🎬 Video ke liye <b>CapCut</b>
-      ya <b>Runway</b> useful hain.
-    `;
-
+  if(q.includes("video")){
+    return "🎬 Video ke liye CapCut, Runway, InVideo aur VEED useful hain.";
   }
 
-  if(
-    q.includes("study") ||
-    q.includes("school") ||
-    q.includes("learn")
-  ){
-
-    return `
-      📚 Study ke liye <b>Quizlet</b>
-      aur research ke liye <b>Perplexity</b> try karo.
-    `;
-
+  if(q.includes("study")||q.includes("school")){
+    return "📚 Study ke liye Quizlet, Perplexity, Photomath, WolframAlpha aur NotebookLM dekho.";
   }
 
-  if(
-    q.includes("code") ||
-    q.includes("coding") ||
-    q.includes("website")
-  ){
-
-    return `
-      💻 Coding ke liye <b>Replit</b>
-      aur <b>GitHub</b> useful options hain.
-    `;
-
+  if(q.includes("code")||q.includes("website")){
+    return "💻 Coding ke liye GitHub, Replit, Cursor, CodePen aur Google AI Studio useful hain.";
   }
 
-  if(
-    q.includes("write") ||
-    q.includes("essay") ||
-    q.includes("grammar")
-  ){
-
-    return `
-      ✍️ Writing ke liye <b>ChatGPT</b>
-      ya <b>Grammarly</b> try karo.
-    `;
-
+  if(q.includes("write")||q.includes("essay")){
+    return "✍️ Writing ke liye ChatGPT, Claude, Grammarly, QuillBot aur DeepL try karo.";
   }
 
-  return `
-    🤖 Main tumhari requirement samajhne ki koshish kar sakta hoon.
-    Image, video, study, writing ya coding ke baare mein poochho.
-  `;
-
+  return "👑 Bilawal AI Hub mein 35+ tools available hain. Batao tumhein image, video, study, coding, writing ya productivity ke liye tool chahiye.";
 }
 
 
-function escapeHTML(text){
+function safe(text){
 
   const div=document.createElement("div");
 
-  div.innerText=text;
+  div.textContent=text;
 
   return div.innerHTML;
-
 }
 
 
-/* =========================
-   THEME
-========================= */
-
-function toggleTheme(){
-
-  document.body.classList.toggle("light");
-
-  const light=
-    document.body.classList.contains("light");
-
-  localStorage.setItem(
-    "bilawalTheme",
-    light?"light":"dark"
-  );
-
-  updateThemeButton();
-
-}
-
-
-function updateThemeButton(){
-
-  const light=
-    document.body.classList.contains("light");
-
-  const btn=
-    document.getElementById("themeToggle");
-
-  if(btn){
-
-    btn.classList.toggle("on",!light);
-
-  }
-
-}
-
-
-function loadTheme(){
-
-  const theme=
-    localStorage.getItem("bilawalTheme");
-
-  if(theme==="light"){
-    document.body.classList.add("light");
-  }
-
-}
-
-
-/* =========================
-   NOTIFICATIONS
-========================= */
-
-function toggleNotifications(){
-
-  notifications=!notifications;
-
-  const btn=
-    document.getElementById("notificationToggle");
-
-  btn.classList.toggle("on",notifications);
-
-  notify(
-    notifications
-    ?"Notifications enabled 🔔"
-    :"Notifications disabled"
-  );
-
-}
-
+/* ================= TOAST ================= */
 
 function notify(text){
 
-  const toast=
-    document.getElementById("toast");
+  const toast=document
+    .getElementById("toast");
 
   toast.innerText=text;
 
@@ -2193,29 +2457,26 @@ function notify(text){
   setTimeout(()=>{
     toast.classList.remove("show");
   },2500);
-
 }
 
 
-/* =========================
-   INITIALIZE
-========================= */
+/* ================= START ================= */
 
-loadTheme();
+setTimeout(()=>{
 
-if(currentUser()){
+  const user=current();
 
-  showApp();
+  if(user){
 
-}else{
+    showApp();
 
-  document.getElementById("authScreen")
-    .classList.remove("hidden");
+  }else{
 
-  document.getElementById("app")
-    .classList.add("hidden");
+    document.getElementById("auth")
+      .classList.remove("hidden");
+  }
 
-}
+},5100);
 
 </script>
 
