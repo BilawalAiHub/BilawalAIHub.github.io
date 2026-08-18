@@ -8,240 +8,2212 @@
 
 <style>
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --bg:#070b12;
+  --panel:#101722;
+  --panel2:#151d29;
+  --border:#263142;
+  --text:#fff;
+  --muted:#8994a5;
+  --accent:#00d9ff;
+  --accent2:#735cff;
+  --danger:#ff4d67;
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+body.light{
+  --bg:#f4f7fb;
+  --panel:#fff;
+  --panel2:#eef2f7;
+  --border:#dce2eb;
+  --text:#101522;
+  --muted:#687386;
+  --shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#080b12;
-  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
 }
 
-header{
-  padding:20px;
-  text-align:center;
-  border-bottom:1px solid #222;
+button,
+input{
+  font-family:inherit;
 }
 
-header h1{
-  font-size:28px;
+button{
+  cursor:pointer;
 }
 
-header span{
-  color:#00d9ff;
+.hidden{
+  display:none!important;
 }
+
+/* TOP BAR */
+
+.topbar{
+  height:70px;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 22px;
+  background:rgba(7,11,18,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+body.light .topbar{
+  background:rgba(255,255,255,.85);
+}
+
+.logo{
+  font-size:23px;
+  font-weight:800;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.icon-btn{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--text);
+  font-size:18px;
+}
+
+.user-mini{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  padding:7px 10px;
+  border-radius:14px;
+  color:var(--text);
+}
+
+.avatar{
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#000;
+  font-weight:bold;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+  position:fixed;
+  top:70px;
+  left:0;
+  bottom:0;
+  width:230px;
+  padding:20px 14px;
+  border-right:1px solid var(--border);
+  background:var(--panel);
+  z-index:900;
+}
+
+.nav-title{
+  color:var(--muted);
+  font-size:11px;
+  text-transform:uppercase;
+  margin:15px 10px 8px;
+  letter-spacing:1px;
+}
+
+.nav-btn{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  padding:12px;
+  border-radius:12px;
+  text-align:left;
+  margin-bottom:4px;
+  font-size:14px;
+}
+
+.nav-btn:hover,
+.nav-btn.active{
+  color:var(--text);
+  background:var(--panel2);
+}
+
+.nav-btn.active{
+  border-left:3px solid var(--accent);
+}
+
+/* MAIN */
+
+.main{
+  margin-left:230px;
+  padding:95px 28px 50px;
+  max-width:1500px;
+}
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+/* HERO */
 
 .hero{
-  text-align:center;
-  padding:45px 20px 30px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:55px 35px;
+  background:
+    radial-gradient(circle at 10% 20%,rgba(0,217,255,.15),transparent 30%),
+    radial-gradient(circle at 90% 80%,rgba(115,92,255,.15),transparent 30%),
+    var(--panel);
+  box-shadow:var(--shadow);
 }
 
-.hero h2{
-  font-size:34px;
-  margin-bottom:15px;
+.hero small{
+  color:var(--accent);
+  font-weight:bold;
+}
+
+.hero h1{
+  margin-top:15px;
+  font-size:clamp(35px,5vw,65px);
+  max-width:800px;
+}
+
+.gradient{
+  background:linear-gradient(90deg,#00d9ff,#735cff,#00d9ff);
+  background-size:200%;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:gradient 4s infinite linear;
+}
+
+@keyframes gradient{
+  from{background-position:0}
+  to{background-position:200%}
 }
 
 .hero p{
-  color:#aaa;
-  font-size:17px;
-  line-height:1.5;
+  color:var(--muted);
+  max-width:700px;
+  margin-top:15px;
+  line-height:1.7;
+}
+
+.hero-buttons{
+  margin-top:25px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
 .btn{
-  display:inline-block;
-  margin-top:22px;
-  padding:13px 25px;
-  background:#00d9ff;
-  color:#000;
-  text-decoration:none;
-  border-radius:25px;
+  border:0;
+  border-radius:13px;
+  padding:13px 19px;
   font-weight:bold;
 }
 
-.search{
-  padding:20px;
+.primary{
+  background:var(--accent);
+  color:#000;
 }
 
-.search input{
-  width:100%;
-  padding:16px;
-  border:none;
-  outline:none;
-  border-radius:14px;
-  background:#151c29;
-  color:white;
-  font-size:16px;
+.secondary{
+  background:var(--panel2);
+  color:var(--text);
+  border:1px solid var(--border);
 }
 
-.section{
-  padding:20px;
-}
+/* STATS */
 
-.section h2{
-  margin-bottom:18px;
-}
-
-.cards{
+.stats{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin:22px 0;
 }
 
-.card{
-  background:#111722;
-  padding:18px 12px;
-  border-radius:15px;
-  text-align:center;
-  border:1px solid #202938;
+.stat{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
 }
 
-.card .icon{
-  font-size:30px;
-  margin-bottom:8px;
+.stat b{
+  display:block;
+  font-size:25px;
+  color:var(--accent);
 }
 
-.card h3{
-  font-size:16px;
-  margin-bottom:8px;
-}
-
-.card p{
-  color:#888;
+.stat span{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
   font-size:12px;
-  margin-bottom:12px;
+}
+
+/* SECTION */
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:35px 0 17px;
+}
+
+.section-head h2{
+  font-size:23px;
+}
+
+.section-head span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* SEARCH */
+
+.search{
+  width:100%;
+  padding:15px 17px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--text);
+  border-radius:14px;
+  outline:none;
+  font-size:15px;
+}
+
+.search:focus{
+  border-color:var(--accent);
+}
+
+/* CATEGORIES */
+
+.categories{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  margin-bottom:18px;
+  padding-bottom:5px;
+}
+
+.category{
+  flex-shrink:0;
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--muted);
+  padding:9px 14px;
+  border-radius:22px;
+}
+
+.category.active,
+.category:hover{
+  background:var(--accent);
+  color:#000;
+}
+
+/* TOOL GRID */
+
+.tools{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.tool{
+  position:relative;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:19px;
+  padding:19px;
+  transition:.25s;
+}
+
+.tool:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent);
+}
+
+.tool-icon{
+  width:50px;
+  height:50px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+  background:var(--panel2);
+  margin-bottom:15px;
+}
+
+.tool h3{
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.tool p{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+  min-height:37px;
+}
+
+.tool-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:16px;
 }
 
 .open{
-  display:inline-block;
-  background:#00d9ff;
-  color:#000;
-  padding:8px 14px;
-  border-radius:18px;
+  border:0;
   text-decoration:none;
+  background:var(--accent);
+  color:#000;
+  padding:8px 13px;
+  border-radius:18px;
   font-size:12px;
   font-weight:bold;
 }
 
-footer{
+.star{
+  border:1px solid var(--border);
+  background:var(--panel2);
+  color:#888;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+}
+
+.star.saved{
+  color:#ffd43b;
+}
+
+/* LOGIN */
+
+.auth-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(0,217,255,.1),transparent 35%),
+    radial-gradient(circle at 80% 80%,rgba(115,92,255,.1),transparent 35%),
+    var(--bg);
+}
+
+.auth-box{
+  width:100%;
+  max-width:440px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+.auth-logo{
   text-align:center;
-  padding:30px 15px;
-  color:#777;
-  margin-top:30px;
-  border-top:1px solid #222;
+  font-size:28px;
+  font-weight:bold;
+  margin-bottom:25px;
+}
+
+.auth-logo span{
+  color:var(--accent);
+}
+
+.auth-box h2{
+  margin-bottom:8px;
+}
+
+.auth-box > p{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+.field{
+  margin-bottom:15px;
+}
+
+.field label{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:7px;
+}
+
+.field input{
+  width:100%;
+  padding:13px;
+  background:var(--panel2);
+  border:1px solid var(--border);
+  color:var(--text);
+  outline:none;
+  border-radius:12px;
+}
+
+.field input:focus{
+  border-color:var(--accent);
+}
+
+.full-btn{
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:12px;
+  background:var(--accent);
+  color:#000;
+  font-weight:bold;
+}
+
+.switch{
+  text-align:center;
+  margin-top:18px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.switch button{
+  border:0;
+  background:none;
+  color:var(--accent);
+}
+
+/* DASHBOARD */
+
+.profile-card{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:25px;
+}
+
+.big-avatar{
+  width:75px;
+  height:75px;
+  border-radius:22px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#000;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.profile-card p{
+  color:var(--muted);
+  margin-top:5px;
+}
+
+/* SETTINGS */
+
+.setting{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:15px;
+  margin-bottom:10px;
+}
+
+.setting p{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:4px;
+}
+
+.toggle{
+  width:48px;
+  height:27px;
+  border:0;
+  border-radius:30px;
+  background:#384251;
+  position:relative;
+}
+
+.toggle:after{
+  content:"";
+  position:absolute;
+  width:21px;
+  height:21px;
+  top:3px;
+  left:4px;
+  border-radius:50%;
+  background:white;
+  transition:.2s;
+}
+
+.toggle.on{
+  background:var(--accent);
+}
+
+.toggle.on:after{
+  left:23px;
+}
+
+/* AI CHAT */
+
+.chat{
+  height:500px;
+  display:flex;
+  flex-direction:column;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+}
+
+.chat-head{
+  padding:17px;
+  border-bottom:1px solid var(--border);
+  font-weight:bold;
+}
+
+.messages{
+  flex:1;
+  padding:20px;
+  overflow-y:auto;
+}
+
+.message{
+  max-width:75%;
+  padding:12px 15px;
+  border-radius:15px;
+  margin-bottom:12px;
+  line-height:1.5;
+  font-size:14px;
+}
+
+.bot{
+  background:var(--panel2);
+  color:var(--text);
+}
+
+.me{
+  margin-left:auto;
+  background:var(--accent);
+  color:#000;
+}
+
+.chat-input{
+  display:flex;
+  gap:8px;
+  padding:12px;
+  border-top:1px solid var(--border);
+}
+
+.chat-input input{
+  flex:1;
+  border:1px solid var(--border);
+  background:var(--panel2);
+  color:var(--text);
+  padding:13px;
+  border-radius:12px;
+  outline:none;
+}
+
+.chat-input button{
+  border:0;
+  background:var(--accent);
+  color:#000;
+  border-radius:12px;
+  padding:0 18px;
+  font-weight:bold;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  right:20px;
+  bottom:25px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:14px 18px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  z-index:5000;
+  transform:translateY(100px);
+  opacity:0;
+  transition:.3s;
+}
+
+.toast.show{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* MOBILE */
+
+.mobile-nav{
+  display:none;
+}
+
+@media(max-width:1100px){
+  .tools{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:850px){
+
+  .sidebar{
+    display:none;
+  }
+
+  .main{
+    margin-left:0;
+    padding:90px 15px 90px;
+  }
+
+  .tools{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .mobile-nav{
+    position:fixed;
+    display:flex;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:2000;
+    background:rgba(8,12,18,.95);
+    backdrop-filter:blur(15px);
+    border-top:1px solid var(--border);
+    justify-content:space-around;
+    padding:9px 5px;
+  }
+
+  body.light .mobile-nav{
+    background:rgba(255,255,255,.95);
+  }
+
+  .mobile-nav button{
+    border:0;
+    background:none;
+    color:var(--muted);
+    font-size:11px;
+  }
+
+  .mobile-nav button div{
+    font-size:20px;
+    margin-bottom:3px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .topbar{
+    padding:0 13px;
+  }
+
+  .logo{
+    font-size:19px;
+  }
+
+  .hero{
+    padding:35px 20px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .tools{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .tool{
+    padding:14px;
+  }
+
+  .tool h3{
+    font-size:14px;
+  }
+
+  .tool p{
+    font-size:11px;
+  }
+
+  .stats{
+    gap:9px;
+  }
+
+  .stat{
+    padding:15px;
+  }
+
+  .stat b{
+    font-size:21px;
+  }
+
+  .user-mini span{
+    display:none;
+  }
+
+  .chat{
+    height:550px;
+  }
+
+}
+
+@media(max-width:340px){
+  .tools{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Bilawal <span>AI Hub</span> 🤖</h1>
-</header>
+<!-- AUTH -->
 
-<section class="hero">
+<div id="authScreen" class="auth-page">
 
-  <h2>Explore AI Tools</h2>
+  <div class="auth-box">
 
-  <p>
-    Discover powerful AI tools for writing, images,
-    videos, study and coding.
-  </p>
+    <div class="auth-logo">
+      Bilawal <span>AI Hub</span> 🤖
+    </div>
 
-  <a href="#tools" class="btn">Explore Tools</a>
+    <div id="loginForm">
 
-</section>
+      <h2>Welcome Back 👋</h2>
 
-<div class="search">
-  <input
-    type="text"
-    id="search"
-    placeholder="🔍 Search AI tools..."
-    onkeyup="searchTools()"
-  >
-</div>
+      <p>Login to continue to Bilawal AI Hub.</p>
 
-<section class="section" id="tools">
+      <div class="field">
+        <label>Email</label>
+        <input id="loginEmail" type="email" placeholder="Enter email">
+      </div>
 
-<h2>🔥 Popular AI Tools</h2>
+      <div class="field">
+        <label>Password</label>
+        <input id="loginPassword" type="password" placeholder="Enter password">
+      </div>
 
-<div class="cards">
+      <button class="full-btn" onclick="login()">
+        Login
+      </button>
 
-<div class="card">
-<div class="icon">✍️</div>
-<h3>ChatGPT</h3>
-<p>AI chat & writing</p>
-<a class="open" href="https://chatgpt.com/" target="_blank">Open Tool</a>
-</div>
+      <div class="switch">
+        Don't have an account?
+        <button onclick="showSignup()">Create Account</button>
+      </div>
 
-<div class="card">
-<div class="icon">🎨</div>
-<h3>Canva AI</h3>
-<p>Design & AI tools</p>
-<a class="open" href="https://www.canva.com/" target="_blank">Open Tool</a>
-</div>
+    </div>
 
-<div class="card">
-<div class="icon">🖼️</div>
-<h3>Image AI</h3>
-<p>Create AI images</p>
-<a class="open" href="https://www.adobe.com/express/" target="_blank">Open Tool</a>
-</div>
 
-<div class="card">
-<div class="icon">🎬</div>
-<h3>Video AI</h3>
-<p>Create & edit videos</p>
-<a class="open" href="https://www.capcut.com/" target="_blank">Open Tool</a>
-</div>
+    <div id="signupForm" class="hidden">
 
-<div class="card">
-<div class="icon">📚</div>
-<h3>Study AI</h3>
-<p>Learn with AI</p>
-<a class="open" href="https://quizlet.com/" target="_blank">Open Tool</a>
-</div>
+      <h2>Create Account 🚀</h2>
 
-<div class="card">
-<div class="icon">💻</div>
-<h3>Coding AI</h3>
-<p>AI coding assistant</p>
-<a class="open" href="https://github.com/" target="_blank">Open Tool</a>
-</div>
+      <p>Make your Bilawal AI Hub account.</p>
+
+      <div class="field">
+        <label>Your Name</label>
+        <input id="signupName" type="text" placeholder="Enter your name">
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input id="signupEmail" type="email" placeholder="Enter email">
+      </div>
+
+      <div class="field">
+        <label>Password</label>
+        <input id="signupPassword" type="password" placeholder="Create password">
+      </div>
+
+      <button class="full-btn" onclick="signup()">
+        Create Account
+      </button>
+
+      <div class="switch">
+        Already have an account?
+        <button onclick="showLogin()">Login</button>
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
-</section>
 
-<footer>
-© 2026 Bilawal AI Hub<br>
-Made with ❤️ by Bilawal
-</footer>
+<!-- APP -->
+
+<div id="app" class="hidden">
+
+  <header class="topbar">
+
+    <div class="logo">
+      Bilawal <span>AI Hub</span> 🤖
+    </div>
+
+    <div class="top-actions">
+
+      <button class="icon-btn" onclick="toggleTheme()">
+        🌓
+      </button>
+
+      <button class="icon-btn" onclick="notify('No new notifications 🔔')">
+        🔔
+      </button>
+
+      <button class="user-mini" onclick="openPage('dashboard')">
+        <div id="miniAvatar" class="avatar">B</div>
+        <span id="miniName">Bilawal</span>
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div class="nav-title">Main</div>
+
+    <button class="nav-btn active" onclick="openPage('home',this)">
+      🏠 Home
+    </button>
+
+    <button class="nav-btn" onclick="openPage('tools',this)">
+      🛠️ AI Tools
+    </button>
+
+    <button class="nav-btn" onclick="openPage('assistant',this)">
+      🤖 AI Assistant
+    </button>
+
+    <div class="nav-title">Personal</div>
+
+    <button class="nav-btn" onclick="openPage('favorites',this)">
+      ⭐ Favorites
+    </button>
+
+    <button class="nav-btn" onclick="openPage('recent',this)">
+      🕘 Recent
+    </button>
+
+    <button class="nav-btn" onclick="openPage('dashboard',this)">
+      👤 Dashboard
+    </button>
+
+    <div class="nav-title">System</div>
+
+    <button class="nav-btn" onclick="openPage('settings',this)">
+      ⚙️ Settings
+    </button>
+
+    <button class="nav-btn" onclick="logout()">
+      🚪 Logout
+    </button>
+
+  </aside>
+
+
+  <main class="main">
+
+
+    <!-- HOME -->
+
+    <section id="home" class="page active">
+
+      <div class="hero">
+
+        <small>⚡ NEXT GENERATION AI PLATFORM</small>
+
+        <h1>
+          Welcome to
+          <span class="gradient">Bilawal AI Hub</span>
+        </h1>
+
+        <p>
+          Your personal hub for discovering AI tools for writing,
+          images, videos, study, coding and productivity.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button class="btn primary"
+                  onclick="openPage('tools')">
+            🚀 Explore AI Tools
+          </button>
+
+          <button class="btn secondary"
+                  onclick="openPage('assistant')">
+            🤖 Ask AI Assistant
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="stats">
+
+        <div class="stat">
+          <b id="totalTools">12</b>
+          <span>Available Tools</span>
+        </div>
+
+        <div class="stat">
+          <b id="favCount">0</b>
+          <span>Favorites</span>
+        </div>
+
+        <div class="stat">
+          <b id="recentCount">0</b>
+          <span>Recently Used</span>
+        </div>
+
+        <div class="stat">
+          <b>24/7</b>
+          <span>Access</span>
+        </div>
+
+      </div>
+
+
+      <div class="section-head">
+        <h2>🔥 Popular Tools</h2>
+        <span>Quick access</span>
+      </div>
+
+      <div id="homeTools" class="tools"></div>
+
+    </section>
+
+
+    <!-- TOOLS -->
+
+    <section id="tools" class="page">
+
+      <div class="section-head">
+        <h2>🛠️ AI Tools</h2>
+        <span id="toolResult">All tools</span>
+      </div>
+
+      <input
+        id="toolSearch"
+        class="search"
+        placeholder="🔍 Search tools..."
+        oninput="renderTools()"
+      >
+
+      <div class="categories">
+
+        <button class="category active"
+                onclick="setCategory('all',this)">
+          All
+        </button>
+
+        <button class="category"
+                onclick="setCategory('writing',this)">
+          ✍️ Writing
+        </button>
+
+        <button class="category"
+                onclick="setCategory('image',this)">
+          🎨 Images
+        </button>
+
+        <button class="category"
+                onclick="setCategory('video',this)">
+          🎬 Video
+        </button>
+
+        <button class="category"
+                onclick="setCategory('study',this)">
+          📚 Study
+        </button>
+
+        <button class="category"
+                onclick="setCategory('coding',this)">
+          💻 Coding
+        </button>
+
+      </div>
+
+      <div id="allTools" class="tools"></div>
+
+    </section>
+
+
+    <!-- ASSISTANT -->
+
+    <section id="assistant" class="page">
+
+      <div class="section-head">
+        <h2>🤖 Bilawal AI Assistant</h2>
+      </div>
+
+      <div class="chat">
+
+        <div class="chat-head">
+          🤖 Bilawal AI Assistant
+        </div>
+
+        <div id="messages" class="messages">
+
+          <div class="message bot">
+            Assalam-o-Alaikum! 👋<br><br>
+            Main Bilawal AI Hub Assistant hoon.
+            Batao tumhein kis type ka AI tool chahiye?
+          </div>
+
+        </div>
+
+        <div class="chat-input">
+
+          <input
+            id="chatInput"
+            placeholder="Ask something..."
+            onkeydown="if(event.key==='Enter')sendMessage()"
+          >
+
+          <button onclick="sendMessage()">
+            Send
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAVORITES -->
+
+    <section id="favorites" class="page">
+
+      <div class="section-head">
+        <h2>⭐ My Favorites</h2>
+        <span>Saved tools</span>
+      </div>
+
+      <div id="favoriteTools" class="tools"></div>
+
+    </section>
+
+
+    <!-- RECENT -->
+
+    <section id="recent" class="page">
+
+      <div class="section-head">
+        <h2>🕘 Recently Used</h2>
+        <span>Last opened tools</span>
+      </div>
+
+      <div id="recentTools" class="tools"></div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard" class="page">
+
+      <div class="section-head">
+        <h2>👤 Dashboard</h2>
+      </div>
+
+      <div class="profile-card">
+
+        <div id="bigAvatar" class="big-avatar">
+          B
+        </div>
+
+        <div>
+          <h2 id="profileName">Bilawal</h2>
+          <p id="profileEmail">email@example.com</p>
+        </div>
+
+      </div>
+
+
+      <div class="stats">
+
+        <div class="stat">
+          <b id="dashFav">0</b>
+          <span>Favorites</span>
+        </div>
+
+        <div class="stat">
+          <b id="dashRecent">0</b>
+          <span>Recent Tools</span>
+        </div>
+
+        <div class="stat">
+          <b>AI</b>
+          <span>Platform</span>
+        </div>
+
+        <div class="stat">
+          <b>2026</b>
+          <span>Member Since</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SETTINGS -->
+
+    <section id="settings" class="page">
+
+      <div class="section-head">
+        <h2>⚙️ Settings</h2>
+      </div>
+
+      <div class="setting">
+
+        <div>
+          <strong>Dark Mode</strong>
+          <p>Switch between dark and light appearance.</p>
+        </div>
+
+        <button id="themeToggle"
+                class="toggle on"
+                onclick="toggleTheme()">
+        </button>
+
+      </div>
+
+
+      <div class="setting">
+
+        <div>
+          <strong>Notifications</strong>
+          <p>Show website notifications.</p>
+        </div>
+
+        <button id="notificationToggle"
+                class="toggle on"
+                onclick="toggleNotifications()">
+        </button>
+
+      </div>
+
+
+      <div class="setting">
+
+        <div>
+          <strong>Clear Recent Tools</strong>
+          <p>Remove your recent tool history.</p>
+        </div>
+
+        <button class="btn secondary"
+                onclick="clearRecent()">
+          Clear
+        </button>
+
+      </div>
+
+
+      <div class="setting">
+
+        <div>
+          <strong>Logout</strong>
+          <p>Sign out from this device.</p>
+        </div>
+
+        <button class="btn secondary"
+                onclick="logout()">
+          Logout
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- MOBILE NAV -->
+
+  <nav class="mobile-nav">
+
+    <button onclick="openPage('home')">
+      <div>🏠</div>
+      Home
+    </button>
+
+    <button onclick="openPage('tools')">
+      <div>🛠️</div>
+      Tools
+    </button>
+
+    <button onclick="openPage('assistant')">
+      <div>🤖</div>
+      AI
+    </button>
+
+    <button onclick="openPage('favorites')">
+      <div>⭐</div>
+      Favorites
+    </button>
+
+    <button onclick="openPage('dashboard')">
+      <div>👤</div>
+      Profile
+    </button>
+
+  </nav>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
 
 <script>
 
-function searchTools(){
+/* =========================
+   TOOL DATABASE
+========================= */
 
-  let input =
-    document.getElementById("search")
-    .value.toLowerCase();
+const tools=[
 
-  let cards =
-    document.querySelectorAll(".card");
+{
+id:"chatgpt",
+name:"ChatGPT",
+icon:"🤖",
+category:"writing",
+description:"AI chat, writing, ideas and everyday questions.",
+url:"https://chatgpt.com/"
+},
 
-  cards.forEach(function(card){
+{
+id:"gemini",
+name:"Gemini",
+icon:"✨",
+category:"writing",
+description:"AI assistant for questions and productivity.",
+url:"https://gemini.google.com/"
+},
 
-    let name =
-      card.innerText.toLowerCase();
+{
+id:"canva",
+name:"Canva",
+icon:"🎨",
+category:"image",
+description:"Design graphics, presentations and visual content.",
+url:"https://www.canva.com/"
+},
 
-    if(name.includes(input)){
-      card.style.display = "block";
-    }else{
-      card.style.display = "none";
-    }
+{
+id:"adobe",
+name:"Adobe Express",
+icon:"🖼️",
+category:"image",
+description:"Create and edit images and social content.",
+url:"https://www.adobe.com/express/"
+},
+
+{
+id:"leonardo",
+name:"Leonardo AI",
+icon:"🪄",
+category:"image",
+description:"AI-powered creative image generation.",
+url:"https://leonardo.ai/"
+},
+
+{
+id:"capcut",
+name:"CapCut",
+icon:"🎬",
+category:"video",
+description:"Video editing with creative AI features.",
+url:"https://www.capcut.com/"
+},
+
+{
+id:"runway",
+name:"Runway",
+icon:"🎞️",
+category:"video",
+description:"Creative AI tools for video generation.",
+url:"https://runwayml.com/"
+},
+
+{
+id:"quizlet",
+name:"Quizlet",
+icon:"📚",
+category:"study",
+description:"Flashcards and learning assistance.",
+url:"https://quizlet.com/"
+},
+
+{
+id:"perplexity",
+name:"Perplexity",
+icon:"🔎",
+category:"study",
+description:"AI-powered search and research assistant.",
+url:"https://www.perplexity.ai/"
+},
+
+{
+id:"github",
+name:"GitHub",
+icon:"💻",
+category:"coding",
+description:"Code hosting and developer collaboration.",
+url:"https://github.com/"
+},
+
+{
+id:"replit",
+name:"Replit",
+icon:"⚙️",
+category:"coding",
+description:"Build and experiment with software online.",
+url:"https://replit.com/"
+},
+
+{
+id:"grammarly",
+name:"Grammarly",
+icon:"📝",
+category:"writing",
+description:"Writing, grammar and communication assistance.",
+url:"https://www.grammarly.com/"
+}
+
+];
+
+let currentCategory="all";
+let notifications=true;
+
+
+/* =========================
+   USER SYSTEM
+========================= */
+
+function getUsers(){
+  return JSON.parse(localStorage.getItem("bilawalUsers") || "[]");
+}
+
+function currentUser(){
+  return JSON.parse(localStorage.getItem("bilawalCurrentUser") || "null");
+}
+
+function signup(){
+
+  const name=document.getElementById("signupName").value.trim();
+  const email=document.getElementById("signupEmail").value.trim().toLowerCase();
+  const password=document.getElementById("signupPassword").value;
+
+  if(!name || !email || !password){
+    notify("Please fill all fields.");
+    return;
+  }
+
+  if(password.length<6){
+    notify("Password must be at least 6 characters.");
+    return;
+  }
+
+  let users=getUsers();
+
+  if(users.some(u=>u.email===email)){
+    notify("This email is already registered.");
+    return;
+  }
+
+  const user={
+    name:name,
+    email:email,
+    password:password,
+    favorites:[],
+    recent:[]
+  };
+
+  users.push(user);
+
+  localStorage.setItem(
+    "bilawalUsers",
+    JSON.stringify(users)
+  );
+
+  localStorage.setItem(
+    "bilawalCurrentUser",
+    JSON.stringify(user)
+  );
+
+  notify("Account created successfully 🚀");
+
+  showApp();
+}
+
+
+function login(){
+
+  const email=document
+    .getElementById("loginEmail")
+    .value.trim()
+    .toLowerCase();
+
+  const password=document
+    .getElementById("loginPassword")
+    .value;
+
+  const users=getUsers();
+
+  const user=users.find(
+    u=>u.email===email && u.password===password
+  );
+
+  if(!user){
+    notify("Incorrect email or password.");
+    return;
+  }
+
+  localStorage.setItem(
+    "bilawalCurrentUser",
+    JSON.stringify(user)
+  );
+
+  notify("Welcome back 👋");
+
+  showApp();
+}
+
+
+function logout(){
+
+  localStorage.removeItem("bilawalCurrentUser");
+
+  document.getElementById("app")
+    .classList.add("hidden");
+
+  document.getElementById("authScreen")
+    .classList.remove("hidden");
+
+  showLogin();
+
+  notify("Logged out.");
+}
+
+
+function showSignup(){
+
+  document.getElementById("loginForm")
+    .classList.add("hidden");
+
+  document.getElementById("signupForm")
+    .classList.remove("hidden");
+
+}
+
+
+function showLogin(){
+
+  document.getElementById("signupForm")
+    .classList.add("hidden");
+
+  document.getElementById("loginForm")
+    .classList.remove("hidden");
+
+}
+
+
+/* =========================
+   APP START
+========================= */
+
+function showApp(){
+
+  const user=currentUser();
+
+  if(!user) return;
+
+  document.getElementById("authScreen")
+    .classList.add("hidden");
+
+  document.getElementById("app")
+    .classList.remove("hidden");
+
+  updateProfile();
+
+  renderTools();
+
+  renderHome();
+
+  updateStats();
+
+  updateThemeButton();
+
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+function updateProfile(){
+
+  const user=currentUser();
+
+  if(!user) return;
+
+  const letter=user.name.charAt(0).toUpperCase();
+
+  document.getElementById("miniName")
+    .innerText=user.name;
+
+  document.getElementById("miniAvatar")
+    .innerText=letter;
+
+  document.getElementById("bigAvatar")
+    .innerText=letter;
+
+  document.getElementById("profileName")
+    .innerText=user.name;
+
+  document.getElementById("profileEmail")
+    .innerText=user.email;
+
+}
+
+
+/* =========================
+   SAVE USER
+========================= */
+
+function saveUser(user){
+
+  localStorage.setItem(
+    "bilawalCurrentUser",
+    JSON.stringify(user)
+  );
+
+  let users=getUsers();
+
+  const index=users.findIndex(
+    u=>u.email===user.email
+  );
+
+  if(index!==-1){
+    users[index]=user;
+  }
+
+  localStorage.setItem(
+    "bilawalUsers",
+    JSON.stringify(users)
+  );
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function openPage(id,button){
+
+  document.querySelectorAll(".page")
+    .forEach(page=>page.classList.remove("active"));
+
+  const page=document.getElementById(id);
+
+  if(page){
+    page.classList.add("active");
+  }
+
+  document.querySelectorAll(".nav-btn")
+    .forEach(btn=>btn.classList.remove("active"));
+
+  if(button){
+    button.classList.add("active");
+  }
+
+  if(id==="favorites"){
+    renderFavorites();
+  }
+
+  if(id==="recent"){
+    renderRecent();
+  }
+
+  if(id==="dashboard"){
+    updateProfile();
+    updateStats();
+  }
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================
+   TOOL CARD
+========================= */
+
+function toolCard(tool){
+
+  const user=currentUser();
+
+  const isFav=user &&
+    user.favorites.includes(tool.id);
+
+  return `
+
+  <div class="tool">
+
+    <div class="tool-icon">
+      ${tool.icon}
+    </div>
+
+    <h3>${tool.name}</h3>
+
+    <p>${tool.description}</p>
+
+    <div class="tool-bottom">
+
+      <a
+        class="open"
+        href="${tool.url}"
+        target="_blank"
+        onclick="useTool('${tool.id}')"
+      >
+        Open Tool
+      </a>
+
+      <button
+        class="star ${isFav?'saved':''}"
+        onclick="toggleFavorite('${tool.id}')"
+      >
+        ${isFav?'★':'☆'}
+      </button>
+
+    </div>
+
+  </div>
+
+  `;
+
+}
+
+
+/* =========================
+   RENDER TOOLS
+========================= */
+
+function renderTools(){
+
+  const box=document.getElementById("allTools");
+
+  if(!box) return;
+
+  const search=
+    (document.getElementById("toolSearch")?.value || "")
+    .toLowerCase()
+    .trim();
+
+  let filtered=tools.filter(tool=>{
+
+    const categoryMatch=
+      currentCategory==="all" ||
+      tool.category===currentCategory;
+
+    const searchMatch=
+      tool.name.toLowerCase().includes(search) ||
+      tool.description.toLowerCase().includes(search);
+
+    return categoryMatch && searchMatch;
 
   });
+
+  box.innerHTML=
+    filtered.length
+    ? filtered.map(toolCard).join("")
+    : `<p style="color:var(--muted)">No tools found.</p>`;
+
+  document.getElementById("toolResult").innerText=
+    filtered.length+" tools found";
+
+}
+
+
+function renderHome(){
+
+  const box=document.getElementById("homeTools");
+
+  box.innerHTML=
+    tools.slice(0,4)
+      .map(toolCard)
+      .join("");
+
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+function setCategory(category,button){
+
+  currentCategory=category;
+
+  document.querySelectorAll(".category")
+    .forEach(b=>b.classList.remove("active"));
+
+  button.classList.add("active");
+
+  renderTools();
+
+}
+
+
+/* =========================
+   FAVORITES
+========================= */
+
+function toggleFavorite(id){
+
+  const user=currentUser();
+
+  if(!user) return;
+
+  if(user.favorites.includes(id)){
+
+    user.favorites=
+      user.favorites.filter(x=>x!==id);
+
+    notify("Removed from favorites.");
+
+  }else{
+
+    user.favorites.push(id);
+
+    notify("Added to favorites ⭐");
+
+  }
+
+  saveUser(user);
+
+  renderTools();
+
+  renderHome();
+
+  renderFavorites();
+
+  updateStats();
+
+}
+
+
+function renderFavorites(){
+
+  const box=document.getElementById("favoriteTools");
+
+  const user=currentUser();
+
+  if(!user) return;
+
+  const favs=
+    tools.filter(t=>user.favorites.includes(t.id));
+
+  box.innerHTML=
+    favs.length
+    ? favs.map(toolCard).join("")
+    : `<p style="color:var(--muted)">
+       No favorite tools yet. Tap ☆ on any tool.
+       </p>`;
+
+}
+
+
+/* =========================
+   RECENT
+========================= */
+
+function useTool(id){
+
+  const user=currentUser();
+
+  if(!user) return;
+
+  user.recent=
+    user.recent.filter(x=>x!==id);
+
+  user.recent.unshift(id);
+
+  user.recent=
+    user.recent.slice(0,8);
+
+  saveUser(user);
+
+  updateStats();
+
+}
+
+
+function renderRecent(){
+
+  const box=document.getElementById("recentTools");
+
+  const user=currentUser();
+
+  if(!user) return;
+
+  const recent=
+    user.recent
+      .map(id=>tools.find(t=>t.id===id))
+      .filter(Boolean);
+
+  box.innerHTML=
+    recent.length
+    ? recent.map(toolCard).join("")
+    : `<p style="color:var(--muted)">
+       You haven't opened any tools yet.
+       </p>`;
+
+}
+
+
+function clearRecent(){
+
+  const user=currentUser();
+
+  if(!user) return;
+
+  user.recent=[];
+
+  saveUser(user);
+
+  renderRecent();
+
+  updateStats();
+
+  notify("Recent history cleared.");
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+function updateStats(){
+
+  const user=currentUser();
+
+  if(!user) return;
+
+  const fav=user.favorites.length;
+  const recent=user.recent.length;
+
+  document.getElementById("favCount").innerText=fav;
+  document.getElementById("recentCount").innerText=recent;
+
+  document.getElementById("dashFav").innerText=fav;
+  document.getElementById("dashRecent").innerText=recent;
+
+}
+
+
+/* =========================
+   AI ASSISTANT
+========================= */
+
+function sendMessage(){
+
+  const input=
+    document.getElementById("chatInput");
+
+  const text=input.value.trim();
+
+  if(!text) return;
+
+  const messages=
+    document.getElementById("messages");
+
+  messages.innerHTML+=`
+    <div class="message me">
+      ${escapeHTML(text)}
+    </div>
+  `;
+
+  input.value="";
+
+  setTimeout(()=>{
+
+    const reply=getAIReply(text);
+
+    messages.innerHTML+=`
+      <div class="message bot">
+        ${reply}
+      </div>
+    `;
+
+    messages.scrollTop=
+      messages.scrollHeight;
+
+  },500);
+
+}
+
+
+function getAIReply(text){
+
+  const q=text.toLowerCase();
+
+  if(
+    q.includes("image") ||
+    q.includes("photo") ||
+    q.includes("picture")
+  ){
+
+    return `
+      🎨 Image ke liye <b>Canva</b> ya
+      <b>Leonardo AI</b> try karo.
+    `;
+
+  }
+
+  if(
+    q.includes("video") ||
+    q.includes("edit")
+  ){
+
+    return `
+      🎬 Video ke liye <b>CapCut</b>
+      ya <b>Runway</b> useful hain.
+    `;
+
+  }
+
+  if(
+    q.includes("study") ||
+    q.includes("school") ||
+    q.includes("learn")
+  ){
+
+    return `
+      📚 Study ke liye <b>Quizlet</b>
+      aur research ke liye <b>Perplexity</b> try karo.
+    `;
+
+  }
+
+  if(
+    q.includes("code") ||
+    q.includes("coding") ||
+    q.includes("website")
+  ){
+
+    return `
+      💻 Coding ke liye <b>Replit</b>
+      aur <b>GitHub</b> useful options hain.
+    `;
+
+  }
+
+  if(
+    q.includes("write") ||
+    q.includes("essay") ||
+    q.includes("grammar")
+  ){
+
+    return `
+      ✍️ Writing ke liye <b>ChatGPT</b>
+      ya <b>Grammarly</b> try karo.
+    `;
+
+  }
+
+  return `
+    🤖 Main tumhari requirement samajhne ki koshish kar sakta hoon.
+    Image, video, study, writing ya coding ke baare mein poochho.
+  `;
+
+}
+
+
+function escapeHTML(text){
+
+  const div=document.createElement("div");
+
+  div.innerText=text;
+
+  return div.innerHTML;
+
+}
+
+
+/* =========================
+   THEME
+========================= */
+
+function toggleTheme(){
+
+  document.body.classList.toggle("light");
+
+  const light=
+    document.body.classList.contains("light");
+
+  localStorage.setItem(
+    "bilawalTheme",
+    light?"light":"dark"
+  );
+
+  updateThemeButton();
+
+}
+
+
+function updateThemeButton(){
+
+  const light=
+    document.body.classList.contains("light");
+
+  const btn=
+    document.getElementById("themeToggle");
+
+  if(btn){
+
+    btn.classList.toggle("on",!light);
+
+  }
+
+}
+
+
+function loadTheme(){
+
+  const theme=
+    localStorage.getItem("bilawalTheme");
+
+  if(theme==="light"){
+    document.body.classList.add("light");
+  }
+
+}
+
+
+/* =========================
+   NOTIFICATIONS
+========================= */
+
+function toggleNotifications(){
+
+  notifications=!notifications;
+
+  const btn=
+    document.getElementById("notificationToggle");
+
+  btn.classList.toggle("on",notifications);
+
+  notify(
+    notifications
+    ?"Notifications enabled 🔔"
+    :"Notifications disabled"
+  );
+
+}
+
+
+function notify(text){
+
+  const toast=
+    document.getElementById("toast");
+
+  toast.innerText=text;
+
+  toast.classList.add("show");
+
+  setTimeout(()=>{
+    toast.classList.remove("show");
+  },2500);
+
+}
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+loadTheme();
+
+if(currentUser()){
+
+  showApp();
+
+}else{
+
+  document.getElementById("authScreen")
+    .classList.remove("hidden");
+
+  document.getElementById("app")
+    .classList.add("hidden");
 
 }
 
