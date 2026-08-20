@@ -3,375 +3,875 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bilawal AI Hub — Futuristic AI Command Center">
-<title>Bilawal AI Hub</title>
+
+<!-- SEO -->
+<title>Bilawal AI Hub | AI Tools, AI Assistant & Creative Workspace</title>
+<meta name="description" content="Bilawal AI Hub is a futuristic AI workspace for AI tools, AI agents, writing, coding, study, creativity, automation and productivity.">
+<meta name="keywords" content="Bilawal AI Hub, Bilawal AI, AI Hub, AI tools, AI assistant, AI agents, AI coding, AI study tools, AI writing, AI productivity">
+<meta name="author" content="Bilawal AI Hub">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#09090b">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://bilawalaihub.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bilawal AI Hub | Futuristic AI Command Center">
+<meta property="og:description" content="Explore AI tools, agents, creative workflows, study tools, coding tools and productivity features in Bilawal AI Hub.">
+<meta property="og:url" content="https://bilawalaihub.github.io/">
+<meta property="og:site_name" content="Bilawal AI Hub">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bilawal AI Hub">
+<meta name="twitter:description" content="A futuristic AI command center for tools, agents, creativity, coding, learning and productivity.">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Bilawal AI Hub",
+  "alternateName":"Bilawal AI",
+  "url":"https://bilawalaihub.github.io/",
+  "description":"A futuristic AI workspace for AI tools, agents, creativity, coding, learning and productivity."
+}
+</script>
 
 <style>
 :root{
-  --bg:#09090b;
-  --surface:#111114;
-  --surface2:#17171b;
-  --gold:#d4af37;
-  --gold2:#f5e6a8;
-  --purple:#8b5cf6;
-  --text:#fafafa;
-  --muted:#a1a1aa;
-  --line:#302817;
-  --danger:#ef4444;
-  --success:#22c55e;
+--bg:#09090b;
+--surface:#111114;
+--surface2:#17171b;
+--gold:#d4af37;
+--gold2:#f5e6a8;
+--purple:#8b5cf6;
+--text:#fafafa;
+--muted:#a1a1aa;
+--line:#302817;
+--danger:#ef4444;
+--success:#22c55e;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth}
+
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at 20% 10%,rgba(212,175,55,.07),transparent 30%),
-    radial-gradient(circle at 85% 75%,rgba(139,92,246,.05),transparent 28%),
-    var(--bg);
-  color:var(--text);
-  min-height:100vh;
+font-family:Arial,Helvetica,sans-serif;
+background:
+radial-gradient(circle at 20% 10%,rgba(212,175,55,.07),transparent 30%),
+radial-gradient(circle at 85% 75%,rgba(139,92,246,.05),transparent 28%),
+var(--bg);
+color:var(--text);
+min-height:100vh;
 }
+
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 .hidden{display:none!important}
 
 /* INTRO */
+
 #intro{
-  position:fixed;
-  inset:0;
-  z-index:99999;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:
-    radial-gradient(circle at center,#241c08,#090805 45%,#000);
-  animation:introOut .8s ease 3.8s forwards;
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:
+radial-gradient(circle at center,#241c08,#090805 45%,#000);
+animation:introOut .8s ease 3.8s forwards;
 }
+
 .intro-box{width:92%;max-width:800px}
+
 .crown{
-  font-size:82px;
-  filter:drop-shadow(0 0 22px rgba(212,175,55,.75));
-  animation:float 2s ease-in-out infinite;
+font-size:82px;
+filter:drop-shadow(0 0 22px rgba(212,175,55,.75));
+animation:float 2s ease-in-out infinite;
 }
+
 .intro-line{
-  width:280px;height:1px;margin:10px auto 25px;
-  background:linear-gradient(90deg,transparent,var(--gold2),var(--gold),transparent)
+width:280px;
+height:1px;
+margin:10px auto 25px;
+background:linear-gradient(90deg,transparent,var(--gold2),var(--gold),transparent)
 }
+
 .intro-title{
-  font-size:clamp(30px,8vw,68px);
-  font-weight:900;
-  letter-spacing:3px;
+font-size:clamp(30px,8vw,68px);
+font-weight:900;
+letter-spacing:3px;
 }
+
 .intro-title span{
-  display:block;
-  color:var(--gold);
-  text-shadow:0 0 25px rgba(212,175,55,.4);
+display:block;
+color:var(--gold);
+text-shadow:0 0 25px rgba(212,175,55,.4);
 }
+
 .tagline{
-  color:#b8aa78;
-  margin:18px auto;
-  line-height:1.6;
+color:#b8aa78;
+margin:18px auto;
+line-height:1.6;
 }
+
 .loader{
-  width:220px;height:3px;background:#27200e;margin:25px auto;overflow:hidden;
+width:220px;
+height:3px;
+background:#27200e;
+margin:25px auto;
+overflow:hidden;
 }
+
 .loader i{
-  display:block;height:100%;width:0;
-  background:linear-gradient(90deg,var(--gold),var(--gold2));
-  animation:load 3.3s linear forwards;
+display:block;
+height:100%;
+width:0;
+background:linear-gradient(90deg,var(--gold),var(--gold2));
+animation:load 3.3s linear forwards;
 }
+
 @keyframes load{to{width:100%}}
 @keyframes float{50%{transform:translateY(-9px)}}
 @keyframes introOut{to{opacity:0;visibility:hidden}}
 
 /* AUTH */
-#auth{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-.auth-card{
-  width:100%;max-width:430px;
-  background:rgba(17,17,20,.94);
-  border:1px solid var(--line);
-  border-radius:25px;
-  padding:30px;
-  box-shadow:0 30px 100px #000;
-}
-.auth-logo{text-align:center;font-size:28px;font-weight:900;margin-bottom:24px}
-.gold{color:var(--gold)}
-.field{margin:14px 0}
-.field label{display:block;color:var(--muted);font-size:12px;margin-bottom:7px}
-.field input,.field textarea,.field select{
-  width:100%;padding:13px;
-  background:#151518;color:#fff;
-  border:1px solid var(--line);
-  border-radius:11px;outline:none;
-}
-.field input:focus,.field textarea:focus{border-color:var(--gold)}
-.gold-btn{
-  width:100%;padding:14px;border:0;border-radius:12px;
-  background:linear-gradient(135deg,#9b741d,#f5e18a,#b98a22);
-  color:#050505;font-weight:900;
-}
-.switch{text-align:center;color:#777;font-size:13px;margin-top:17px}
-.switch button{border:0;background:none;color:var(--gold2)}
 
-/* APP */
+#auth{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.auth-card{
+width:100%;
+max-width:430px;
+background:rgba(17,17,20,.94);
+border:1px solid var(--line);
+border-radius:25px;
+padding:30px;
+box-shadow:0 30px 100px #000;
+}
+
+.auth-logo{
+text-align:center;
+font-size:28px;
+font-weight:900;
+margin-bottom:24px
+}
+
+.gold{color:var(--gold)}
+
+.field{margin:14px 0}
+
+.field label{
+display:block;
+color:var(--muted);
+font-size:12px;
+margin-bottom:7px
+}
+
+.field input,
+.field textarea,
+.field select{
+width:100%;
+padding:13px;
+background:#151518;
+color:#fff;
+border:1px solid var(--line);
+border-radius:11px;
+outline:none;
+}
+
+.field input:focus,
+.field textarea:focus{
+border-color:var(--gold)
+}
+
+.gold-btn{
+width:100%;
+padding:14px;
+border:0;
+border-radius:12px;
+background:linear-gradient(135deg,#9b741d,#f5e18a,#b98a22);
+color:#050505;
+font-weight:900;
+}
+
+.switch{
+text-align:center;
+color:#777;
+font-size:13px;
+margin-top:17px
+}
+
+.switch button{
+border:0;
+background:none;
+color:var(--gold2)
+}
+
+/* TOPBAR */
+
 .topbar{
-  height:68px;position:fixed;top:0;left:0;right:0;z-index:5000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 22px;background:rgba(9,9,11,.92);
-  backdrop-filter:blur(16px);border-bottom:1px solid var(--line);
+height:68px;
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:5000;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 22px;
+background:rgba(9,9,11,.92);
+backdrop-filter:blur(16px);
+border-bottom:1px solid var(--line);
 }
-.logo{font-size:21px;font-weight:900}
+
+.logo{
+font-size:21px;
+font-weight:900
+}
+
 .logo span{color:var(--gold)}
-.top-right{display:flex;gap:8px;align-items:center}
-.icon-btn,.profile-mini{
-  border:1px solid var(--line);background:#111114;color:var(--gold2);
-  border-radius:11px;
+
+.top-right{
+display:flex;
+gap:8px;
+align-items:center
 }
-.icon-btn{width:40px;height:40px}
-.profile-mini{padding:5px 10px 5px 5px;display:flex;align-items:center;gap:8px}
-.avatar,.big-avatar{
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#9b741d,#ffe58a,#a87d1c);
-  color:#000;font-weight:900;
+
+.icon-btn,
+.profile-mini{
+border:1px solid var(--line);
+background:#111114;
+color:var(--gold2);
+border-radius:11px;
 }
-.avatar{width:31px;height:31px;border-radius:50%}
+
+.icon-btn{
+width:40px;
+height:40px
+}
+
+.profile-mini{
+padding:5px 10px 5px 5px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.avatar,
+.big-avatar{
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#9b741d,#ffe58a,#a87d1c);
+color:#000;
+font-weight:900;
+}
+
+.avatar{
+width:31px;
+height:31px;
+border-radius:50%
+}
 
 /* SIDEBAR */
+
 .sidebar{
-  position:fixed;top:68px;bottom:0;left:0;width:240px;
-  padding:18px 12px;background:#08080a;border-right:1px solid var(--line);
-  overflow:auto;z-index:4000;
+position:fixed;
+top:68px;
+bottom:0;
+left:0;
+width:240px;
+padding:18px 12px;
+background:#08080a;
+border-right:1px solid var(--line);
+overflow:auto;
+z-index:4000;
 }
+
 .side-title{
-  color:#76642f;font-size:10px;letter-spacing:2px;
-  margin:18px 9px 8px;
+color:#76642f;
+font-size:10px;
+letter-spacing:2px;
+margin:18px 9px 8px;
 }
+
 .nav{
-  display:block;width:100%;padding:11px 12px;margin:3px 0;
-  border:0;border-radius:10px;background:transparent;color:#888;
-  text-align:left;
+display:block;
+width:100%;
+padding:11px 12px;
+margin:3px 0;
+border:0;
+border-radius:10px;
+background:transparent;
+color:#888;
+text-align:left;
 }
-.nav:hover,.nav.active{
-  color:var(--gold2);background:#17130a;
-  border-left:3px solid var(--gold);
+
+.nav:hover,
+.nav.active{
+color:var(--gold2);
+background:#17130a;
+border-left:3px solid var(--gold);
 }
 
 /* MAIN */
-main{margin-left:240px;padding:92px 28px 60px;max-width:1600px}
+
+main{
+margin-left:240px;
+padding:92px 28px 60px;
+max-width:1600px
+}
+
 .page{display:none}
 .page.active{display:block}
+
+/* HERO */
+
 .hero{
-  padding:45px;
-  border:1px solid var(--line);
-  border-radius:26px;
-  background:
-    radial-gradient(circle at 10% 20%,rgba(212,175,55,.13),transparent 30%),
-    radial-gradient(circle at 90% 80%,rgba(139,92,246,.08),transparent 30%),
-    #0d0d10;
+padding:45px;
+border:1px solid var(--line);
+border-radius:26px;
+background:
+radial-gradient(circle at 10% 20%,rgba(212,175,55,.13),transparent 30%),
+radial-gradient(circle at 90% 80%,rgba(139,92,246,.08),transparent 30%),
+#0d0d10;
 }
-.hero-label{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:900}
-.hero h1{font-size:clamp(38px,6vw,72px);line-height:1.05;margin-top:15px}
+
+.hero-label{
+font-size:11px;
+letter-spacing:3px;
+color:var(--gold);
+font-weight:900
+}
+
+.hero h1{
+font-size:clamp(38px,6vw,72px);
+line-height:1.05;
+margin-top:15px
+}
+
 .hero h1 span{
-  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));
-  -webkit-background-clip:text;color:transparent;
+background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));
+-webkit-background-clip:text;
+color:transparent;
 }
-.hero p{max-width:780px;color:#999;line-height:1.7;margin-top:17px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+
+.hero p{
+max-width:780px;
+color:#999;
+line-height:1.7;
+margin-top:17px
+}
+
+.actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:25px
+}
+
 .btn{
-  padding:12px 18px;border-radius:11px;border:1px solid var(--line);
-  font-weight:800;
+padding:12px 18px;
+border-radius:11px;
+border:1px solid var(--line);
+font-weight:800;
 }
-.primary{background:linear-gradient(135deg,#a77d1c,#f2d875);color:#000}
-.secondary{background:#14130f;color:var(--gold2)}
+
+.primary{
+background:linear-gradient(135deg,#a77d1c,#f2d875);
+color:#000
+}
+
+.secondary{
+background:#14130f;
+color:var(--gold2)
+}
 
 /* COMMAND */
+
 .command{
-  margin-top:18px;padding:20px;
-  border:1px solid var(--line);border-radius:20px;background:#0d0d10;
+margin-top:18px;
+padding:20px;
+border:1px solid var(--line);
+border-radius:20px;
+background:#0d0d10;
 }
+
 .command h2{margin-bottom:12px}
-.command-row{display:flex;gap:8px}
-.command-row input{
-  flex:1;padding:15px;background:#151518;color:#fff;
-  border:1px solid var(--line);border-radius:12px;outline:none;
+
+.command-row{
+display:flex;
+gap:8px
 }
-.command-row button{padding:0 20px;border:0;border-radius:12px;background:var(--gold);color:#000;font-weight:900}
+
+.command-row input{
+flex:1;
+padding:15px;
+background:#151518;
+color:#fff;
+border:1px solid var(--line);
+border-radius:12px;
+outline:none;
+}
+
+.command-row button{
+padding:0 20px;
+border:0;
+border-radius:12px;
+background:var(--gold);
+color:#000;
+font-weight:900;
+}
 
 /* STATS */
+
 .stats{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+margin:18px 0;
 }
+
 .stat{
-  padding:20px;border:1px solid var(--line);border-radius:17px;background:#0e0e11;
+padding:20px;
+border:1px solid var(--line);
+border-radius:17px;
+background:#0e0e11;
 }
-.stat b{display:block;color:var(--gold);font-size:25px}
-.stat span{display:block;color:#777;font-size:12px;margin-top:5px}
+
+.stat b{
+display:block;
+color:var(--gold);
+font-size:25px
+}
+
+.stat span{
+display:block;
+color:#777;
+font-size:12px;
+margin-top:5px
+}
 
 /* SECTION */
+
 .section-title{
-  display:flex;justify-content:space-between;align-items:center;
-  margin:30px 0 15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:30px 0 15px;
 }
-.section-title span{font-size:12px;color:#666}
+
+.section-title span{
+font-size:12px;
+color:#666
+}
 
 /* CARDS */
+
 .grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
 }
+
 .card{
-  padding:18px;border:1px solid var(--line);border-radius:18px;
-  background:linear-gradient(145deg,#121216,#0a0a0c);
-  transition:.2s;
+padding:18px;
+border:1px solid var(--line);
+border-radius:18px;
+background:linear-gradient(145deg,#121216,#0a0a0c);
+transition:.2s;
 }
+
 .card:hover{
-  transform:translateY(-4px);border-color:#725c25;
-  box-shadow:0 14px 40px rgba(212,175,55,.07);
+transform:translateY(-4px);
+border-color:#725c25;
+box-shadow:0 14px 40px rgba(212,175,55,.07);
 }
+
 .card-icon{
-  width:48px;height:48px;border-radius:13px;
-  display:flex;align-items:center;justify-content:center;
-  background:#19150b;border:1px solid #342a15;font-size:24px;margin-bottom:13px;
+width:48px;
+height:48px;
+border-radius:13px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#19150b;
+border:1px solid #342a15;
+font-size:24px;
+margin-bottom:13px;
 }
-.card h3{font-size:16px;margin-bottom:7px}
-.card p{font-size:12px;color:#888;line-height:1.5;min-height:36px}
-.card-actions{display:flex;justify-content:space-between;align-items:center;margin-top:15px}
+
+.card h3{
+font-size:16px;
+margin-bottom:7px
+}
+
+.card p{
+font-size:12px;
+color:#888;
+line-height:1.5;
+min-height:36px
+}
+
+.card-actions{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:15px
+}
+
 .open-btn{
-  padding:8px 12px;border:0;border-radius:16px;
-  background:linear-gradient(135deg,#a4791b,#f0d46c);color:#000;font-weight:900;font-size:12px;
+padding:8px 12px;
+border:0;
+border-radius:16px;
+background:linear-gradient(135deg,#a4791b,#f0d46c);
+color:#000;
+font-weight:900;
+font-size:12px;
 }
+
 .star{
-  width:34px;height:34px;border-radius:50%;
-  background:#15130d;border:1px solid var(--line);color:#777;
+width:34px;
+height:34px;
+border-radius:50%;
+background:#15130d;
+border:1px solid var(--line);
+color:#777;
 }
+
 .star.saved{color:#ffd63f}
 
 /* SEARCH */
+
 .search{
-  width:100%;padding:15px;background:#0d0d10;color:#fff;
-  border:1px solid var(--line);border-radius:13px;outline:none;
+width:100%;
+padding:15px;
+background:#0d0d10;
+color:#fff;
+border:1px solid var(--line);
+border-radius:13px;
+outline:none;
 }
-.categories{display:flex;gap:8px;overflow:auto;padding:13px 0}
+
+.categories{
+display:flex;
+gap:8px;
+overflow:auto;
+padding:13px 0
+}
+
 .category{
-  white-space:nowrap;padding:9px 14px;border-radius:20px;
-  border:1px solid var(--line);background:#0d0d10;color:#888;
+white-space:nowrap;
+padding:9px 14px;
+border-radius:20px;
+border:1px solid var(--line);
+background:#0d0d10;
+color:#888;
 }
-.category.active,.category:hover{background:var(--gold);color:#000}
 
-/* ASSISTANT */
+.category.active,
+.category:hover{
+background:var(--gold);
+color:#000
+}
+
+/* CHAT */
+
 .chat{
-  height:570px;border:1px solid var(--line);border-radius:20px;
-  background:#0d0d10;display:flex;flex-direction:column;overflow:hidden;
+height:570px;
+border:1px solid var(--line);
+border-radius:20px;
+background:#0d0d10;
+display:flex;
+flex-direction:column;
+overflow:hidden;
 }
-.chat-head{padding:17px;border-bottom:1px solid var(--line);color:var(--gold2);font-weight:900}
-.messages{flex:1;overflow:auto;padding:20px}
-.message{
-  max-width:80%;padding:12px 15px;border-radius:14px;
-  margin-bottom:12px;line-height:1.5;font-size:14px;
-}
-.bot{background:#17140d;border:1px solid var(--line)}
-.me{margin-left:auto;background:linear-gradient(135deg,#a67a1b,#ebcf68);color:#000}
-.chat-input{display:flex;gap:7px;padding:11px;border-top:1px solid var(--line)}
-.chat-input input{
-  flex:1;padding:13px;background:#151518;color:#fff;
-  border:1px solid var(--line);border-radius:11px;outline:none;
-}
-.chat-input button{padding:0 15px;border:0;border-radius:11px;background:var(--gold);color:#000;font-weight:900}
 
-/* WORKSPACE */
+.chat-head{
+padding:17px;
+border-bottom:1px solid var(--line);
+color:var(--gold2);
+font-weight:900
+}
+
+.messages{
+flex:1;
+overflow:auto;
+padding:20px
+}
+
+.message{
+max-width:80%;
+padding:12px 15px;
+border-radius:14px;
+margin-bottom:12px;
+line-height:1.5;
+font-size:14px
+}
+
+.bot{
+background:#17140d;
+border:1px solid var(--line)
+}
+
+.me{
+margin-left:auto;
+background:linear-gradient(135deg,#a67a1b,#ebcf68);
+color:#000
+}
+
+.chat-input{
+display:flex;
+gap:7px;
+padding:11px;
+border-top:1px solid var(--line)
+}
+
+.chat-input input{
+flex:1;
+padding:13px;
+background:#151518;
+color:#fff;
+border:1px solid var(--line);
+border-radius:11px;
+outline:none
+}
+
+.chat-input button{
+padding:0 15px;
+border:0;
+border-radius:11px;
+background:var(--gold);
+color:#000;
+font-weight:900
+}
+
+/* PANELS */
+
 .workspace{
-  display:grid;grid-template-columns:1fr 1fr;gap:15px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px
 }
+
 .panel{
-  padding:20px;background:#0d0d10;border:1px solid var(--line);border-radius:18px;
+padding:20px;
+background:#0d0d10;
+border:1px solid var(--line);
+border-radius:18px
 }
+
 .panel h3{margin-bottom:12px}
+
 .list-item{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:13px 0;border-bottom:1px solid #211d14;color:#aaa;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:13px 0;
+border-bottom:1px solid #211d14;
+color:#aaa
 }
+
 .list-item:last-child{border:0}
 
 /* PROFILE */
+
 .profile{
-  display:flex;align-items:center;gap:18px;padding:25px;
-  background:#0d0d10;border:1px solid var(--line);border-radius:20px;
+display:flex;
+align-items:center;
+gap:18px;
+padding:25px;
+background:#0d0d10;
+border:1px solid var(--line);
+border-radius:20px
 }
-.big-avatar{width:75px;height:75px;border-radius:20px;font-size:28px}
-.profile p{color:#777;margin-top:5px}
+
+.big-avatar{
+width:75px;
+height:75px;
+border-radius:20px;
+font-size:28px
+}
+
+.profile p{
+color:#777;
+margin-top:5px
+}
 
 /* PROGRESS */
-.progress{height:8px;background:#211f1a;border-radius:20px;overflow:hidden;margin-top:10px}
-.progress i{display:block;height:100%;width:65%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+
+.progress{
+height:8px;
+background:#211f1a;
+border-radius:20px;
+overflow:hidden;
+margin-top:10px
+}
+
+.progress i{
+display:block;
+height:100%;
+width:65%;
+background:linear-gradient(90deg,var(--gold),var(--gold2))
+}
 
 /* SETTINGS */
+
 .setting{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:15px;padding:17px;margin-bottom:9px;
-  background:#0d0d10;border:1px solid var(--line);border-radius:14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+padding:17px;
+margin-bottom:9px;
+background:#0d0d10;
+border:1px solid var(--line);
+border-radius:14px
 }
-.setting p{font-size:12px;color:#777;margin-top:4px}
+
+.setting p{
+font-size:12px;
+color:#777;
+margin-top:4px
+}
+
 .small-btn{
-  padding:9px 13px;background:#15130d;color:var(--gold2);
-  border:1px solid var(--line);border-radius:9px;
+padding:9px 13px;
+background:#15130d;
+color:var(--gold2);
+border:1px solid var(--line);
+border-radius:9px
 }
 
 /* FOOTER */
+
 footer{
-  text-align:center;color:#666;line-height:1.8;
-  padding:45px 15px 70px;margin-top:50px;border-top:1px solid var(--line);
+text-align:center;
+color:#666;
+line-height:1.8;
+padding:45px 15px 70px;
+margin-top:50px;
+border-top:1px solid var(--line)
 }
+
 footer strong{color:var(--gold)}
 
 /* MOBILE */
+
 .mobile-nav{
-  display:none;
+display:none
 }
+
 .toast{
-  position:fixed;right:18px;bottom:20px;z-index:9999;
-  padding:13px 17px;background:#15130d;color:#fff;
-  border:1px solid var(--line);border-radius:12px;
-  opacity:0;transform:translateY(20px);transition:.25s;
+position:fixed;
+right:18px;
+bottom:20px;
+z-index:9999;
+padding:13px 17px;
+background:#15130d;
+color:#fff;
+border:1px solid var(--line);
+border-radius:12px;
+opacity:0;
+transform:translateY(20px);
+transition:.25s
 }
-.toast.show{opacity:1;transform:translateY(0)}
+
+.toast.show{
+opacity:1;
+transform:translateY(0)
+}
 
 @media(max-width:1100px){
-  .grid{grid-template-columns:repeat(3,1fr)}
+.grid{grid-template-columns:repeat(3,1fr)}
 }
+
 @media(max-width:850px){
-  .sidebar{display:none}
-  main{margin-left:0;padding:88px 14px 90px}
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .workspace{grid-template-columns:1fr}
-  .mobile-nav{
-    position:fixed;display:flex;bottom:0;left:0;right:0;z-index:6000;
-    background:rgba(7,7,9,.97);border-top:1px solid var(--line);
-    justify-content:space-around;padding:8px 3px;
-  }
-  .mobile-nav button{
-    border:0;background:none;color:#888;font-size:10px;
-  }
-  .mobile-nav div{font-size:19px;margin-bottom:2px}
+
+.sidebar{display:none}
+
+main{
+margin-left:0;
+padding:88px 14px 90px
 }
+
+.grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr)
+}
+
+.workspace{
+grid-template-columns:1fr
+}
+
+.mobile-nav{
+position:fixed;
+display:flex;
+bottom:0;
+left:0;
+right:0;
+z-index:6000;
+background:rgba(7,7,9,.97);
+border-top:1px solid var(--line);
+justify-content:space-around;
+padding:8px 3px
+}
+
+.mobile-nav button{
+border:0;
+background:none;
+color:#888;
+font-size:10px
+}
+
+.mobile-nav div{
+font-size:19px;
+margin-bottom:2px
+}
+
+}
+
 @media(max-width:500px){
-  .topbar{padding:0 10px}
-  .profile-mini span{display:none}
-  .hero{padding:30px 20px}
-  .hero h1{font-size:39px}
-  .grid{gap:9px}
-  .card{padding:13px}
-  .card h3{font-size:14px}
-  .card p{font-size:11px}
-  .command-row{flex-direction:column}
-  .command-row button{padding:13px}
+
+.topbar{padding:0 10px}
+
+.profile-mini span{display:none}
+
+.hero{padding:30px 20px}
+
+.hero h1{font-size:39px}
+
+.grid{gap:9px}
+
+.card{padding:13px}
+
+.card h3{font-size:14px}
+
+.card p{font-size:11px}
+
+.command-row{
+flex-direction:column
+}
+
+.command-row button{
+padding:13px
+}
+
 }
 </style>
 </head>
@@ -380,997 +880,463 @@ footer strong{color:var(--gold)}
 
 <!-- INTRO -->
 <div id="intro">
-  <div class="intro-box">
-    <div class="crown">👑</div>
-    <div class="intro-line"></div>
-    <div class="intro-title">
-      WELCOME TO
-      <span>BILAWAL AI HUB</span>
-    </div>
-    <div class="tagline">
-      Where imagination meets intelligence.
-    </div>
-    <div class="loader"><i></i></div>
-  </div>
+<div class="intro-box">
+<div class="crown">👑</div>
+<div class="intro-line"></div>
+
+<div class="intro-title">
+WELCOME TO
+<span>BILAWAL AI HUB</span>
+</div>
+
+<div class="tagline">
+Where imagination meets intelligence.
+</div>
+
+<div class="loader">
+<i></i>
+</div>
+</div>
 </div>
 
 <!-- AUTH -->
 <div id="auth" class="hidden">
-  <div class="auth-card">
-    <div class="auth-logo">Bilawal <span class="gold">AI Hub</span></div>
 
-    <div id="loginBox">
-      <h2>Welcome Back 👑</h2>
-      <p style="color:#777;margin-top:7px">Enter your AI workspace.</p>
+<div class="auth-card">
 
-      <div class="field">
-        <label>Email</label>
-        <input id="loginEmail" type="email" placeholder="your@email.com">
-      </div>
+<div class="auth-logo">
+Bilawal <span class="gold">AI Hub</span>
+</div>
 
-      <div class="field">
-        <label>Password</label>
-        <input id="loginPassword" type="password" placeholder="Password">
-      </div>
+<div id="loginBox">
 
-      <button class="gold-btn" onclick="login()">Login</button>
+<h2>Welcome Back 👑</h2>
 
-      <div class="switch">
-        New here?
-        <button onclick="showSignup()">Create Account</button>
-      </div>
-    </div>
+<p style="color:#777;margin-top:7px">
+Enter your AI workspace.
+</p>
 
-    <div id="signupBox" class="hidden">
-      <h2>Create Account</h2>
-      <p style="color:#777;margin-top:7px">Start your futuristic workspace.</p>
+<div class="field">
+<label>Email</label>
+<input id="loginEmail" type="email" placeholder="your@email.com">
+</div>
 
-      <div class="field">
-        <label>Name</label>
-        <input id="signupName" placeholder="Your name">
-      </div>
+<div class="field">
+<label>Password</label>
+<input id="loginPassword" type="password" placeholder="Password">
+</div>
 
-      <div class="field">
-        <label>Email</label>
-        <input id="signupEmail" type="email" placeholder="your@email.com">
-      </div>
+<button class="gold-btn" onclick="login()">Login</button>
 
-      <div class="field">
-        <label>Password</label>
-        <input id="signupPassword" type="password" placeholder="Password">
-      </div>
+<div class="switch">
+New here?
+<button onclick="showSignup()">Create Account</button>
+</div>
 
-      <button class="gold-btn" onclick="signup()">Create Account</button>
+</div>
 
-      <div class="switch">
-        Already registered?
-        <button onclick="showLogin()">Login</button>
-      </div>
-    </div>
-  </div>
+<div id="signupBox" class="hidden">
+
+<h2>Create Account</h2>
+
+<p style="color:#777;margin-top:7px">
+Start your futuristic workspace.
+</p>
+
+<div class="field">
+<label>Name</label>
+<input id="signupName" placeholder="Your name">
+</div>
+
+<div class="field">
+<label>Email</label>
+<input id="signupEmail" type="email" placeholder="your@email.com">
+</div>
+
+<div class="field">
+<label>Password</label>
+<input id="signupPassword" type="password" placeholder="Password">
+</div>
+
+<button class="gold-btn" onclick="signup()">
+Create Account
+</button>
+
+<div class="switch">
+Already registered?
+<button onclick="showLogin()">Login</button>
+</div>
+
+</div>
+
+</div>
 </div>
 
 <!-- APP -->
+
 <div id="app" class="hidden">
 
 <header class="topbar">
-  <div class="logo">Bilawal <span>AI Hub</span></div>
 
-  <div class="top-right">
-    <button class="icon-btn" onclick="notify('Bilawal AI Hub Command Center 👑')">👑</button>
-    <button class="icon-btn" onclick="notify('Notifications ready 🔔')">🔔</button>
+<div class="logo">
+Bilawal <span>AI Hub</span>
+</div>
 
-    <div class="profile-mini" onclick="openPage('dashboard')">
-      <div class="avatar" id="miniAvatar">B</div>
-      <span id="miniName">Bilawal</span>
-    </div>
-  </div>
+<div class="top-right">
+
+<button class="icon-btn"
+onclick="notify('Bilawal AI Hub Command Center 👑')">
+👑
+</button>
+
+<button class="icon-btn"
+onclick="notify('Notifications ready 🔔')">
+🔔
+</button>
+
+<div class="profile-mini"
+onclick="openPage('dashboard')">
+
+<div class="avatar" id="miniAvatar">B</div>
+
+<span id="miniName">Bilawal</span>
+
+</div>
+
+</div>
+
 </header>
+
+<!-- SIDEBAR -->
 
 <aside class="sidebar">
 
-  <div class="side-title">COMMAND CENTER</div>
-  <button class="nav active" onclick="openPage('home',this)">🏠 Home</button>
-  <button class="nav" onclick="openPage('assistant',this)">🧠 AI Command Center</button>
-  <button class="nav" onclick="openPage('agents',this)">🤖 AI Agents</button>
-  <button class="nav" onclick="openPage('tools',this)">🛠️ AI Tools</button>
-  <button class="nav" onclick="openPage('search',this)">🔎 AI Search</button>
+<div class="side-title">
+COMMAND CENTER
+</div>
 
-  <div class="side-title">CREATE</div>
-  <button class="nav" onclick="openPage('creative',this)">🎨 Creative Studio</button>
-  <button class="nav" onclick="openPage('automation',this)">⚡ Automation</button>
-  <button class="nav" onclick="openPage('miniapps',this)">🧩 Mini-App Builder</button>
+<button class="nav active"
+onclick="openPage('home',this)">
+🏠 Home
+</button>
 
-  <div class="side-title">MY SPACE</div>
-  <button class="nav" onclick="openPage('workspace',this)">📁 Workspace</button>
-  <button class="nav" onclick="openPage('prompts',this)">📝 Prompt Library</button>
-  <button class="nav" onclick="openPage('favorites',this)">⭐ Favorites</button>
-  <button class="nav" onclick="openPage('recent',this)">🕘 Recent</button>
+<button class="nav"
+onclick="openPage('assistant',this)">
+🧠 AI Command Center
+</button>
 
-  <div class="side-title">LEARN & DISCOVER</div>
-  <button class="nav" onclick="openPage('academy',this)">🎓 AI Academy</button>
-  <button class="nav" onclick="openPage('news',this)">📰 AI News</button>
-  <button class="nav" onclick="openPage('developer',this)">👨‍💻 Developer Zone</button>
+<button class="nav"
+onclick="openPage('agents',this)">
+🤖 AI Agents
+</button>
 
-  <div class="side-title">ACCOUNT</div>
-  <button class="nav" onclick="openPage('dashboard',this)">👤 Dashboard</button>
-  <button class="nav" onclick="openPage('security',this)">🛡️ Security Center</button>
-  <button class="nav" onclick="openPage('settings',this)">⚙️ Settings</button>
-  <button class="nav" onclick="logout()">🚪 Logout</button>
+<button class="nav"
+onclick="openPage('tools',this)">
+🛠️ AI Tools
+</button>
+
+<button class="nav"
+onclick="openPage('search',this)">
+🔎 AI Search
+</button>
+
+<div class="side-title">
+CREATE
+</div>
+
+<button class="nav"
+onclick="openPage('creative',this)">
+🎨 Creative Studio
+</button>
+
+<button class="nav"
+onclick="openPage('automation',this)">
+⚡ Automation
+</button>
+
+<button class="nav"
+onclick="openPage('miniapps',this)">
+🧩 Mini-App Builder
+</button>
+
+<div class="side-title">
+MY SPACE
+</div>
+
+<button class="nav"
+onclick="openPage('workspace',this)">
+📁 Workspace
+</button>
+
+<button class="nav"
+onclick="openPage('prompts',this)">
+📝 Prompt Library
+</button>
+
+<button class="nav"
+onclick="openPage('favorites',this)">
+⭐ Favorites
+</button>
+
+<button class="nav"
+onclick="openPage('recent',this)">
+🕘 Recent
+</button>
+
+<div class="side-title">
+LEARN & DISCOVER
+</div>
+
+<button class="nav"
+onclick="openPage('academy',this)">
+🎓 AI Academy
+</button>
+
+<button class="nav"
+onclick="openPage('news',this)">
+📰 AI News
+</button>
+
+<button class="nav"
+onclick="openPage('developer',this)">
+👨‍💻 Developer Zone
+</button>
+
+<div class="side-title">
+ACCOUNT
+</div>
+
+<button class="nav"
+onclick="openPage('dashboard',this)">
+👤 Dashboard
+</button>
+
+<button class="nav"
+onclick="openPage('security',this)">
+🛡️ Security Center
+</button>
+
+<button class="nav"
+onclick="openPage('settings',this)">
+⚙️ Settings
+</button>
+
+<button class="nav"
+onclick="logout()">
+🚪 Logout
+</button>
+
 </aside>
 
 <main>
 
 <!-- HOME -->
+
 <section id="home" class="page active">
 
-  <div class="hero">
-    <div class="hero-label">BILAWAL AI HUB • FUTURE EDITION</div>
+<div class="hero">
 
-    <h1>
-      Your Ideas.<br>
-      <span>Powered by Intelligence.</span>
-    </h1>
+<div class="hero-label">
+BILAWAL AI HUB • FUTURE EDITION
+</div>
 
-    <p>
-      One futuristic command center for AI tools, agents, creative work,
-      learning, automation, coding and productivity.
-    </p>
+<h1>
+Your Ideas.<br>
+<span>Powered by Intelligence.</span>
+</h1>
 
-    <div class="actions">
-      <button class="btn primary" onclick="openPage('assistant')">🚀 Command Center</button>
-      <button class="btn secondary" onclick="openPage('tools')">🛠️ Explore Tools</button>
-    </div>
-  </div>
+<p>
+Bilawal AI Hub is a futuristic digital workspace for AI tools,
+AI agents, coding, learning, creativity, automation and productivity.
+</p>
 
-  <div class="command">
-    <h2>🧠 What do you want to accomplish?</h2>
-    <div class="command-row">
-      <input id="homeCommand" placeholder="e.g. Explain Grade 9 Physics and make a quiz...">
-      <button onclick="runCommand('homeCommand')">Run Goal →</button>
-    </div>
-  </div>
+<div class="actions">
 
-  <div class="stats">
-    <div class="stat"><b>50+</b><span>AI Tools</span></div>
-    <div class="stat"><b>6</b><span>AI Agents</span></div>
-    <div class="stat"><b>2,450</b><span>XP Points</span></div>
-    <div class="stat"><b>12</b><span>Projects</span></div>
-  </div>
+<button class="btn primary"
+onclick="openPage('assistant')">
+🚀 Command Center
+</button>
 
-  <div class="section-title">
-    <h2>⚡ Quick Access</h2>
-    <span>Future workspace</span>
-  </div>
-
-  <div class="grid" id="quickGrid"></div>
-</section>
-
-<!-- ASSISTANT -->
-<section id="assistant" class="page">
-  <div class="section-title">
-    <h2>🧠 Bilawal AI Command Center</h2>
-    <span>Plan → Tools → Steps → Result</span>
-  </div>
-
-  <div class="chat">
-    <div class="chat-head">👑 Bilawal AI • Universal Assistant</div>
-
-    <div class="messages" id="messages">
-      <div class="message bot">
-        Assalam-o-Alaikum! 👋<br><br>
-        Tell me what you want to accomplish. I can organize your goal
-        into steps and suggest the right AI agent or tool.
-      </div>
-    </div>
-
-    <div class="chat-input">
-      <button onclick="voiceInput()" title="Voice">🎙️</button>
-      <button onclick="fakeFile()" title="File">📎</button>
-      <input id="chatText" placeholder="Ask Bilawal AI anything...">
-      <button onclick="sendChat()">Send</button>
-    </div>
-  </div>
-</section>
-
-<!-- AGENTS -->
-<section id="agents" class="page">
-  <div class="section-title"><h2>🤖 AI Agent Center</h2><span>Specialized workflows</span></div>
-  <div class="grid" id="agentGrid"></div>
-</section>
-
-<!-- TOOLS -->
-<section id="tools" class="page">
-  <div class="section-title"><h2>🛠️ AI Tools</h2><span>50+ tools interface</span></div>
-
-  <input class="search" id="toolSearch" oninput="filterTools()" placeholder="🔎 Search AI tools...">
-
-  <div class="categories">
-    <button class="category active" onclick="filterCategory('All',this)">All</button>
-    <button class="category" onclick="filterCategory('Writing',this)">Writing</button>
-    <button class="category" onclick="filterCategory('Image',this)">Image</button>
-    <button class="category" onclick="filterCategory('Video',this)">Video</button>
-    <button class="category" onclick="filterCategory('Study',this)">Study</button>
-    <button class="category" onclick="filterCategory('Coding',this)">Coding</button>
-    <button class="category" onclick="filterCategory('Audio',this)">Audio</button>
-    <button class="category" onclick="filterCategory('Productivity',this)">Productivity</button>
-  </div>
-
-  <div class="grid" id="toolGrid"></div>
-</section>
-
-<!-- SEARCH -->
-<section id="search" class="page">
-  <div class="section-title"><h2>🔎 AI Search</h2><span>Natural-language discovery</span></div>
-
-  <div class="command">
-    <div class="command-row">
-      <input id="searchInput" placeholder="Ask: Which tool can help me study Physics?">
-      <button onclick="aiSearch()">Search</button>
-    </div>
-  </div>
-
-  <div id="searchResult" style="margin-top:18px"></div>
-</section>
-
-<!-- CREATIVE -->
-<section id="creative" class="page">
-  <div class="section-title"><h2>🎨 Creative Studio</h2><span>One creative workspace</span></div>
-  <div class="grid" id="creativeGrid"></div>
-</section>
-
-<!-- AUTOMATION -->
-<section id="automation" class="page">
-  <div class="section-title"><h2>⚡ Automation Center</h2><span>Build a workflow</span></div>
-
-  <div class="panel">
-    <h3>Describe your workflow</h3>
-    <div class="field">
-      <textarea id="automationInput" rows="5"
-        placeholder="Example: Research a topic → summarize it → create study notes → create quiz"></textarea>
-    </div>
-    <button class="btn primary" onclick="buildAutomation()">Build Workflow</button>
-    <div id="automationResult" style="margin-top:18px"></div>
-  </div>
-</section>
-
-<!-- WORKSPACE -->
-<section id="workspace" class="page">
-  <div class="section-title"><h2>📁 AI Workspace</h2><span>Private projects & notes</span></div>
-
-  <div class="workspace">
-    <div class="panel">
-      <h3>📂 Projects</h3>
-      <div class="list-item">School Project <span>→</span></div>
-      <div class="list-item">Website Project <span>→</span></div>
-      <div class="list-item">Creative Ideas <span>→</span></div>
-      <button class="btn primary" style="margin-top:15px" onclick="notify('New project created ✨')">+ New Project</button>
-    </div>
-
-    <div class="panel">
-      <h3>📝 Notes</h3>
-      <div class="list-item">Physics Notes <span>📝</span></div>
-      <div class="list-item">AI Ideas <span>📝</span></div>
-      <div class="list-item">Website Plans <span>📝</span></div>
-      <button class="btn primary" style="margin-top:15px" onclick="notify('New note created ✨')">+ New Note</button>
-    </div>
-  </div>
-</section>
-
-<!-- PROMPTS -->
-<section id="prompts" class="page">
-  <div class="section-title"><h2>📝 Prompt Library</h2><span>Save your best prompts</span></div>
-
-  <div class="grid" id="promptGrid"></div>
-</section>
-
-<!-- ACADEMY -->
-<section id="academy" class="page">
-  <div class="section-title"><h2>🎓 AI Academy</h2><span>Beginner → Intermediate → Advanced</span></div>
-
-  <div class="grid">
-    <div class="card">
-      <div class="card-icon">🌱</div>
-      <h3>AI Beginner</h3>
-      <p>Learn AI basics, prompting and responsible AI use.</p>
-      <div class="progress"><i style="width:72%"></i></div>
-      <button class="open-btn" style="margin-top:14px" onclick="notify('Course opened 🎓')">Continue</button>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">⚡</div>
-      <h3>AI Intermediate</h3>
-      <p>Learn workflows, multimodal prompts and productivity.</p>
-      <div class="progress"><i style="width:40%"></i></div>
-      <button class="open-btn" style="margin-top:14px" onclick="notify('Course opened 🎓')">Start</button>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🚀</div>
-      <h3>AI Advanced</h3>
-      <p>Explore agents, automation and developer workflows.</p>
-      <div class="progress"><i style="width:18%"></i></div>
-      <button class="open-btn" style="margin-top:14px" onclick="notify('Course opened 🎓')">Start</button>
-    </div>
-  </div>
-
-  <div class="panel" style="margin-top:18px">
-    <h3>🏆 Daily Challenge</h3>
-    <p style="color:#888;margin-top:8px">Create a useful prompt today and earn 100 XP.</p>
-    <button class="btn primary" style="margin-top:15px" onclick="notify('+100 XP earned! 🏆')">Complete Challenge</button>
-  </div>
-</section>
-
-<!-- NEWS -->
-<section id="news" class="page">
-  <div class="section-title"><h2>📰 AI News & Discover</h2><span>Latest technology section</span></div>
-
-  <div class="grid">
-    <div class="card"><div class="card-icon">🤖</div><h3>AI Agents</h3><p>Explore the evolution from chatbots to multi-step AI workflows.</p><button class="open-btn" onclick="notify('Article opened')">Read</button></div>
-    <div class="card"><div class="card-icon">🎨</div><h3>Generative Media</h3><p>Discover modern image, video and audio generation workflows.</p><button class="open-btn" onclick="notify('Article opened')">Read</button></div>
-    <div class="card"><div class="card-icon">💻</div><h3>AI Coding</h3><p>Learn how AI can assist developers with projects and code.</p><button class="open-btn" onclick="notify('Article opened')">Read</button></div>
-    <div class="card"><div class="card-icon">🌐</div><h3>AI Everywhere</h3><p>See how AI is becoming part of everyday digital workflows.</p><button class="open-btn" onclick="notify('Article opened')">Read</button></div>
-  </div>
-</section>
-
-<!-- MINI APPS -->
-<section id="miniapps" class="page">
-  <div class="section-title"><h2>🧩 Mini-App Builder</h2><span>Describe → Generate concept</span></div>
-
-  <div class="panel">
-    <div class="field">
-      <label>What mini-app do you want?</label>
-      <textarea id="miniInput" rows="5" placeholder="Example: Make a Grade 9 calculator with dark gold design"></textarea>
-    </div>
-
-    <button class="btn primary" onclick="buildMiniApp()">Generate Mini-App</button>
-
-    <div id="miniResult" style="margin-top:18px"></div>
-  </div>
-</section>
-
-<!-- DEVELOPER -->
-<section id="developer" class="page">
-  <div class="section-title"><h2>👨‍💻 Developer Zone</h2><span>Build the future</span></div>
-
-  <div class="grid">
-    <div class="card"><div class="card-icon">⌨️</div><h3>Code Workspace</h3><p>Future code editor workspace for projects.</p><button class="open-btn" onclick="notify('Code workspace opened')">Open</button></div>
-    <div class="card"><div class="card-icon">📚</div><h3>API Docs</h3><p>Organize API documentation and integration guides.</p><button class="open-btn" onclick="notify('API docs opened')">Open</button></div>
-    <div class="card"><div class="card-icon">🧠</div><h3>AI Coding Assistant</h3><p>Plan, explain and improve code with AI.</p><button class="open-btn" onclick="openPage('assistant')">Launch</button></div>
-    <div class="card"><div class="card-icon">🧩</div><h3>Templates</h3><p>Starter templates for future projects.</p><button class="open-btn" onclick="notify('Templates opened')">Browse</button></div>
-  </div>
-</section>
-
-<!-- FAVORITES -->
-<section id="favorites" class="page">
-  <div class="section-title"><h2>⭐ Favorites</h2><span>Your saved tools</span></div>
-  <div id="favoriteGrid" class="grid"></div>
-</section>
-
-<!-- RECENT -->
-<section id="recent" class="page">
-  <div class="section-title"><h2>🕘 Recent Activity</h2><span>Your latest actions</span></div>
-  <div class="panel" id="recentList">
-    <div class="list-item">Opened Command Center <span>Today</span></div>
-    <div class="list-item">Explored AI Tools <span>Today</span></div>
-    <div class="list-item">Visited AI Academy <span>Today</span></div>
-  </div>
-</section>
-
-<!-- DASHBOARD -->
-<section id="dashboard" class="page">
-  <div class="section-title"><h2>👤 Advanced Dashboard</h2><span>Your AI profile</span></div>
-
-  <div class="profile">
-    <div class="big-avatar" id="bigAvatar">B</div>
-    <div>
-      <h2 id="profileName">Bilawal</h2>
-      <p id="profileEmail">AI Hub Member</p>
-    </div>
-  </div>
-
-  <div class="stats">
-    <div class="stat"><b>48</b><span>Tools Used</span></div>
-    <div class="stat"><b>12</b><span>Projects</span></div>
-    <div class="stat"><b>17</b><span>Favorites</span></div>
-    <div class="stat"><b>2,450</b><span>XP</span></div>
-  </div>
-
-  <div class="panel">
-    <h3>🏆 Level 12 — AI Explorer</h3>
-    <p style="color:#777;margin-top:7px">2,450 / 3,000 XP to next level</p>
-    <div class="progress"><i style="width:82%"></i></div>
-  </div>
-
-  <div class="section-title"><h2>🎖️ Achievements</h2></div>
-  <div class="grid">
-    <div class="card"><div class="card-icon">🔥</div><h3>Early Explorer</h3><p>Started your AI journey.</p></div>
-    <div class="card"><div class="card-icon">🧠</div><h3>Prompt Master</h3><p>Created powerful prompts.</p></div>
-    <div class="card"><div class="card-icon">🚀</div><h3>Builder</h3><p>Created your first project.</p></div>
-  </div>
-</section>
-
-<!-- SECURITY -->
-<section id="security" class="page">
-  <div class="section-title"><h2>🛡️ Security Center</h2><span>Account controls</span></div>
-
-  <div class="setting">
-    <div><b>Login Sessions</b><p>Review active sessions when backend authentication is connected.</p></div>
-    <button class="small-btn" onclick="notify('Session manager ready')">Manage</button>
-  </div>
-
-  <div class="setting">
-    <div><b>Logout All Devices</b><p>End all active sessions.</p></div>
-    <button class="small-btn" onclick="notify('Backend required for real session control')">Logout All</button>
-  </div>
-
-  <div class="setting">
-    <div><b>Password</b><p>Real password changes require secure backend authentication.</p></div>
-    <button class="small-btn" onclick="notify('Connect secure authentication first')">Change</button>
-  </div>
-
-  <div class="setting">
-    <div><b>Privacy Controls</b><p>Manage future workspace and data permissions.</p></div>
-    <button class="small-btn" onclick="notify('Privacy controls opened')">Open</button>
-  </div>
-
-  <div class="setting">
-    <div><b>Delete Account</b><p>Permanently remove account data after backend connection.</p></div>
-    <button class="small-btn" onclick="notify('Account deletion requires backend')">Delete</button>
-  </div>
-</section>
-
-<!-- SETTINGS -->
-<section id="settings" class="page">
-  <div class="section-title"><h2>⚙️ Settings</h2><span>Customize your hub</span></div>
-
-  <div class="setting">
-    <div><b>🌐 Language</b><p>English • Urdu • Roman Urdu</p></div>
-    <select class="small-btn" onchange="changeLanguage(this.value)">
-      <option>English</option>
-      <option>Urdu</option>
-      <option>Roman Urdu</option>
-    </select>
-  </div>
-
-  <div class="setting">
-    <div><b>✨ Futuristic Effects</b><p>Gold glow and interface effects.</p></div>
-    <button class="small-btn" onclick="notify('Futuristic effects toggled ✨')">Toggle</button>
-  </div>
-
-  <div class="setting">
-    <div><b>🔔 Notifications</b><p>AI Hub notification preferences.</p></div>
-    <button class="small-btn" onclick="notify('Notifications enabled 🔔')">Enabled</button>
-  </div>
-
-  <div class="setting">
-    <div><b>🎨 Theme</b><p>Midnight Black + Champagne Gold + subtle Purple.</p></div>
-    <button class="small-btn" onclick="notify('Premium theme active 👑')">Active</button>
-  </div>
-</section>
-
-<footer>
-  <strong>BILAWAL AI HUB</strong><br>
-  Future-ready AI workspace • Midnight Black × Champagne Gold<br>
-  <span class="gold">Built for ideas, learning, creativity and productivity.</span>
-</footer>
-
-</main>
-
-<!-- MOBILE NAV -->
-<nav class="mobile-nav">
-  <button onclick="openPage('home')"><div>🏠</div>Home</button>
-  <button onclick="openPage('tools')"><div>🛠️</div>Tools</button>
-  <button onclick="openPage('assistant')"><div>🧠</div>AI</button>
-  <button onclick="openPage('workspace')"><div>📁</div>Space</button>
-  <button onclick="openPage('dashboard')"><div>👤</div>Profile</button>
-</nav>
+<button class="btn secondary"
+onclick="openPage('tools')">
+🛠️ Explore Tools
+</button>
 
 </div>
 
-<div id="toast" class="toast"></div>
-
-<script>
-/* ================= DATA ================= */
-
-const agents=[
-  ["📚","Study Agent","Explain lessons, make notes and quizzes."],
-  ["💻","Coding Agent","Plan, explain and improve code."],
-  ["✍️","Writing Agent","Draft, rewrite and organize writing."],
-  ["🔎","Research Agent","Break research goals into useful steps."],
-  ["🎨","Design Agent","Creative concepts, branding and visuals."],
-  ["⚡","Productivity Agent","Turn goals into organized workflows."]
-];
-
-const tools=[
-["✍️","AI Writer","Writing","Create and improve text."],
-["📝","Summarizer","Writing","Turn long text into summaries."],
-["🌐","Translator","Writing","Translate between languages."],
-["💡","Idea Generator","Writing","Generate creative ideas."],
-["📧","Email Writer","Writing","Draft professional emails."],
-["📱","Caption Maker","Writing","Create social captions."],
-["📖","Story Maker","Writing","Build story concepts."],
-["📋","Grammar Helper","Writing","Improve grammar and clarity."],
-
-["🎨","Image Creator","Image","Generate image concepts."],
-["🖼️","Image Enhancer","Image","Improve image quality."],
-["🧑‍🎨","Logo Maker","Image","Create logo concepts."],
-["🌌","Wallpaper Maker","Image","Create wallpaper concepts."],
-["🪄","Background Ideas","Image","Create background concepts."],
-["👑","Brand Designer","Image","Build premium brand ideas."],
-
-["🎬","Video Ideas","Video","Generate video concepts."],
-["🎞️","Script Maker","Video","Write video scripts."],
-["📹","Shorts Planner","Video","Plan short-form videos."],
-["🎥","Storyboard Maker","Video","Create scene-by-scene plans."],
-
-["📚","Study Helper","Study","Explain difficult topics."],
-["🧮","Math Helper","Study","Practice mathematics."],
-["🔬","Science Helper","Study","Understand science topics."],
-["📝","Quiz Maker","Study","Generate practice quizzes."],
-["🧠","Flashcard Maker","Study","Create study flashcards."],
-["📅","Study Planner","Study","Build study schedules."],
-
-["💻","Code Explainer","Coding","Explain code clearly."],
-["🐛","Bug Helper","Coding","Analyze coding problems."],
-["🏗️","Project Planner","Coding","Plan software projects."],
-["🧩","HTML Builder","Coding","Plan web pages."],
-["⚙️","Algorithm Helper","Coding","Understand algorithms."],
-
-["🎙️","Voice Assistant","Audio","Voice workflow interface."],
-["🔊","Audio Ideas","Audio","Plan audio projects."],
-["🎵","Podcast Planner","Audio","Plan podcast episodes."],
-
-["⏱️","Task Planner","Productivity","Organize tasks."],
-["📌","To-Do Maker","Productivity","Create useful task lists."],
-["📊","Presentation Planner","Productivity","Plan presentations."],
-["🗓️","Schedule Helper","Productivity","Organize schedules."]
-];
-
-const creative=[
-["🎨","Image Studio","Image creation workspace."],
-["🎬","Video Studio","Video planning workspace."],
-["🪄","Logo Studio","Branding and logo workspace."],
-["🎙️","Audio Studio","Voice and audio workspace."],
-["📊","Presentation Studio","Presentation creation workspace."],
-["🖼️","Poster Studio","Poster and social design workspace."]
-];
-
-const prompts=[
-["🎓","Study Prompt","Explain a topic simply, then create 10 quiz questions."],
-["💻","Coding Prompt","Explain this code and suggest improvements."],
-["✍️","Writing Prompt","Rewrite this text clearly and professionally."],
-["🔎","Research Prompt","Break this research topic into reliable steps."],
-["🎨","Design Prompt","Create a premium futuristic design concept."]
-];
-
-let currentCategory="All";
-let favorites=new Set();
-let recent=[];
-
-/* ================= AUTH ================= */
-
-function showSignup(){
-  loginBox.classList.add("hidden");
-  signupBox.classList.remove("hidden");
-}
-
-function showLogin(){
-  signupBox.classList.add("hidden");
-  loginBox.classList.remove("hidden");
-}
-
-function signup(){
-  const name=signupName.value.trim();
-  const email=signupEmail.value.trim();
-  const pass=signupPassword.value;
-
-  if(!name||!email||pass.length<6){
-    notify("Name, email aur 6+ character password enter karo.");
-    return;
-  }
-
-  /*
-    Demo-only session.
-    Production mein password ko localStorage mein save nahi karna.
-  */
-  sessionStorage.setItem("bah_user",JSON.stringify({name,email}));
-  enterApp({name,email});
-}
-
-function login(){
-  const email=loginEmail.value.trim();
-
-  if(!email){
-    notify("Email enter karo.");
-    return;
-  }
-
-  const saved=sessionStorage.getItem("bah_user");
-
-  if(saved){
-    enterApp(JSON.parse(saved));
-  }else{
-    enterApp({name:"Bilawal",email});
-  }
-}
-
-function enterApp(user){
-  document.getElementById("auth").classList.add("hidden");
-  document.getElementById("app").classList.remove("hidden");
-
-  const name=user.name||"Bilawal";
-  const initial=name.charAt(0).toUpperCase();
-
-  miniName.textContent=name;
-  miniAvatar.textContent=initial;
-  profileName.textContent=name;
-  profileEmail.textContent=user.email||"AI Hub Member";
-  bigAvatar.textContent=initial;
-
-  renderAll();
-}
-
-function logout(){
-  sessionStorage.removeItem("bah_user");
-  document.getElementById("app").classList.add("hidden");
-  document.getElementById("auth").classList.remove("hidden");
-  showLogin();
-  notify("Logged out successfully.");
-}
-
-/* ================= NAVIGATION ================= */
-
-function openPage(id,btn){
-  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-
-  const page=document.getElementById(id);
-  if(page) page.classList.add("active");
-
-  document.querySelectorAll(".nav").forEach(n=>n.classList.remove("active"));
-  if(btn) btn.classList.add("active");
-
-  recent.unshift(id);
-  recent=[...new Set(recent)].slice(0,8);
-  renderRecent();
-
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-/* ================= RENDER ================= */
-
-function makeCard(item,index,type){
-  const icon=item[0],title=item[1],desc=item[2];
-
-  return `
-    <div class="card searchable-card" data-name="${title.toLowerCase()}">
-      <div class="card-icon">${icon}</div>
-      <h3>${title}</h3>
-      <p>${desc}</p>
-      <div class="card-actions">
-        <button class="open-btn" onclick="useItem('${title}')">Open</button>
-        <button class="star ${favorites.has(title)?"saved":""}"
-          onclick="toggleFavorite('${title}',this)">★</button>
-      </div>
-    </div>
-  `;
-}
-
-function renderAll(){
-  quickGrid.innerHTML=[
-    ["🧠","Command Center","Plan any goal with AI."],
-    ["🤖","AI Agents","Use specialized agents."],
-    ["🎨","Creative Studio","Create media workflows."],
-    ["⚡","Automation","Build multi-step workflows."]
-  ].map(makeCard).join("");
-
-  agentGrid.innerHTML=agents.map(makeCard).join("");
-  toolGrid.innerHTML=tools.map(makeCard).join("");
-  creativeGrid.innerHTML=creative.map(makeCard).join("");
-  promptGrid.innerHTML=prompts.map(makeCard).join("");
-  renderFavorites();
-  renderRecent();
-}
-
-/* ================= TOOLS ================= */
-
-function filterTools(){
-  const q=toolSearch.value.toLowerCase();
-
-  document.querySelectorAll("#toolGrid .card").forEach(card=>{
-    const name=card.dataset.name;
-    const category=currentCategory.toLowerCase();
-    const original=tools.find(x=>x[1].toLowerCase()===name);
-
-    const matchesSearch=name.includes(q);
-    const matchesCat=currentCategory==="All" ||
-      original[2].toLowerCase()===category;
-
-    card.style.display=matchesSearch&&matchesCat?"block":"none";
-  });
-}
-
-function filterCategory(cat,btn){
-  currentCategory=cat;
-  document.querySelectorAll(".category").forEach(x=>x.classList.remove("active"));
-  btn.classList.add("active");
-  filterTools();
-}
-
-/* ================= FAVORITES ================= */
-
-function toggleFavorite(name,button){
-  if(favorites.has(name)){
-    favorites.delete(name);
-    button.classList.remove("saved");
-    notify("Removed from favorites");
-  }else{
-    favorites.add(name);
-    button.classList.add("saved");
-    notify("Added to favorites ⭐");
-  }
-  renderFavorites();
-}
-
-function renderFavorites(){
-  const items=tools.filter(x=>favorites.has(x[1]));
-
-  if(!items.length){
-    favoriteGrid.innerHTML=`
-      <div class="panel">
-        <h3>No favorites yet ⭐</h3>
-        <p style="color:#777;margin-top:7px">AI Tools mein ★ press karke tools save karo.</p>
-      </div>`;
-    return;
-  }
-
-  favoriteGrid.innerHTML=items.map(makeCard).join("");
-}
-
-/* ================= ASSISTANT ================= */
-
-function sendChat(){
-  const input=document.getElementById("chatText");
-  const text=input.value.trim();
-
-  if(!text)return;
-
-  addMessage(text,"me");
-  input.value="";
-
-  setTimeout(()=>{
-    addMessage(
-      "I understood your goal. 👑<br><br>"+
-      "Suggested workflow:<br>"+
-      "1️⃣ Understand the goal<br>"+
-      "2️⃣ Select the best AI Agent<br>"+
-      "3️⃣ Choose supporting tools<br>"+
-      "4️⃣ Organize the steps<br>"+
-      "5️⃣ Produce the final result<br><br>"+
-      "Real AI execution can be connected through a secure backend/API.",
-      "bot"
-    );
-  },500);
-}
-
-function addMessage(text,type){
-  const box=document.getElementById("messages");
-  const div=document.createElement("div");
-  div.className="message "+type;
-  div.innerHTML=text;
-  box.appendChild(div);
-  box.scrollTop=box.scrollHeight;
-}
-
-function runCommand(inputId){
-  const input=document.getElementById(inputId);
-  const value=input.value.trim();
-
-  if(!value){
-    notify("Apna goal likho.");
-    return;
-  }
-
-  input.value="";
-  openPage("assistant");
-  addMessage(value,"me");
-
-  setTimeout(()=>{
-    addMessage(
-      "🚀 Command Center Plan<br><br>"+
-      "Goal received: <b>"+escapeHtml(value)+"</b><br><br>"+
-      "Recommended flow:<br>"+
-      "🧠 Analyze → 🤖 Agent → 🛠️ Tools → ⚡ Workflow → ✅ Result",
-      "bot"
-    );
-  },400);
-}
-
-/* ================= SEARCH ================= */
-
-function aiSearch(){
-  const q=searchInput.value.trim().toLowerCase();
-
-  if(!q){
-    notify("Search query likho.");
-    return;
-  }
-
-  const found=tools.filter(t=>
-    t[1].toLowerCase().includes(q)||
-    t[2].toLowerCase().includes(q)||
-    t[3]?.toLowerCase().includes(q)
-  ).slice(0,8);
-
-  searchResult.innerHTML=`
-    <div class="section-title">
-      <h2>Search Results</h2>
-    </div>
-    <div class="grid">
-      ${
-        found.length
-        ? found.map(makeCard).join("")
-        : `<div class="panel"><h3>No exact tool found.</h3><p style="color:#777;margin-top:7px">Try words like study, image, coding, writing or video.</p></div>`
-      }
-    </div>
-  `;
-}
-
-/* ================= AUTOMATION ================= */
-
-function buildAutomation(){
-  const value=automationInput.value.trim();
-
-  if(!value){
-    notify("Workflow describe karo.");
-    return;
-  }
-
-  automationResult.innerHTML=`
-    <div class="panel">
-      <h3>⚡ Generated Workflow</h3>
-      <p style="color:#aaa;margin-top:8px">${escapeHtml(value)}</p>
-
-      <div class="list-item">1. 🎯 Understand objective <span>Ready</span></div>
-      <div class="list-item">2. 🧠 Select AI Agent <span>Ready</span></div>
-      <div class="list-item">3. 🛠️ Select tools <span>Ready</span></div>
-      <div class="list-item">4. ⚙️ Execute steps <span>Planned</span></div>
-      <div class="list-item">5. ✅ Review result <span>Planned</span></div>
-    </div>
-  `;
-}
-
-/* ================= MINI APP ================= */
-
-function buildMiniApp(){
-  const value=miniInput.value.trim();
-
-  if(!value){
-    notify("Mini-app ka idea likho.");
-    return;
-  }
-
-  miniResult.innerHTML=`
-    <div class="panel">
-      <h3>🧩 Mini-App Concept</h3>
-      <p style="color:#aaa;margin-top:8px">
-        <b>Request:</b> ${escapeHtml(value)}
-      </p>
-
-      <div class="list-item">📱 Interface <span>Generated</span></div>
-      <div class="list-item">🎨 Theme <span>Black + Gold</span></div>
-      <div class="list-item">⚙️ Logic <span>Planned</span></div>
-      <div class="list-item">🚀 Deployment <span>Backend required</span></div>
-
-      <button class="btn primary" style="margin-top:15px"
-        onclick="notify('Mini-app build pipeline ready')">
-        Continue Build
-      </button>
-    </div>
-  `;
-}
-
-/* ================= UTILITIES ================= */
-
-function useItem(name){
-  recent.unshift(name);
-  recent=[...new Set(recent)].slice(0,8);
-  renderRecent();
-
-  notify(name+" opened ✨");
-
-  if(name.includes("Assistant")||name.includes("Command")){
-    openPage("assistant");
-  }
-}
-
-function renderRecent(){
-  if(!recent.length)return;
-
-  recentList.innerHTML=recent.map((x,i)=>`
-    <div class="list-item">
-      ${escapeHtml(x)}
-      <span>${i===0?"Now":"Recent"}</span>
-    </div>
-  `).join("");
-}
-
-function voiceInput(){
-  if(!("webkitSpeechRecognition" in window)){
-    notify("Voice input browser mein available nahi hai.");
-    return;
-  }
-
-  const recognition=new webkitSpeechRecognition();
-  recognition.lang="en-US";
-  recognition.onresult=e=>{
-    document.getElementById("chatText").value=e.results[0][0].transcript;
-  };
-  recognition.start();
-  notify("Listening 🎙️");
-}
-
-function fakeFile(){
-  const input=document.createElement("input");
-  input.type="file";
-  input.onchange=()=>{
-    if(input.files[0]){
-      notify(input.files[0].name+" selected 📎");
-    }
-  };
-  input.click();
-}
-
-function changeLanguage(lang){
-  notify("Interface language selected: "+lang);
-}
-
-function notify(text){
-  const t=document.getElementById("toast");
-  t.textContent=text;
-  t.classList.add("show");
-
-  clearTimeout(window.toastTimer);
-  window.toastTimer=setTimeout(()=>{
-    t.classList.remove("show");
-  },2500);
-}
-
-function escapeHtml(text){
-  return String(text)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
-/* ================= START ================= */
-
-setTimeout(()=>{
-  const intro=document.getElementById("intro");
-  if(intro)intro.remove();
-
-  const saved=sessionStorage.getItem("bah_user");
-
-  if(saved){
-    enterApp(JSON.parse(saved));
-  }else{
-    document.getElementById("auth").classList.remove("hidden");
-  }
-},4300);
-
-/* ENTER KEY */
-document.addEventListener("keydown",e=>{
-  if(e.key==="Enter" && document.activeElement.id==="chatText"){
-    sendChat();
-  }
-
-  if(e.key==="Enter" && document.activeElement.id==="homeCommand"){
-    runCommand("homeCommand");
-  }
-});
-</script>
-
-</body>
-</html>
+</div>
+
+<div class="command">
+
+<h2>
+🧠 What do you want to accomplish?
+</h2>
+
+<div class="command-row">
+
+<input
+id="homeCommand"
+placeholder="e.g. Explain Grade 9 Physics and make a quiz..."
+>
+
+<button onclick="runCommand('homeCommand')">
+Run Goal →
+</button>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<b>50+</b>
+<span>AI Tools</span>
+</div>
+
+<div class="stat">
+<b>6</b>
+<span>AI Agents</span>
+</div>
+
+<div class="stat">
+<b>2,450</b>
+<span>XP Points</span>
+</div>
+
+<div class="stat">
+<b>12</b>
+<span>Projects</span>
+</div>
+
+</div>
+
+<div class="section-title">
+
+<h2>⚡ Quick Access</h2>
+
+<span>Future workspace</span>
+
+</div>
+
+<div class="grid" id="quickGrid"></div>
+
+</section>
+
+<!-- ASSISTANT -->
+
+<section id="assistant" class="page">
+
+<div class="section-title">
+
+<h2>
+🧠 Bilawal AI Command Center
+</h2>
+
+<span>
+Plan → Tools → Steps → Result
+</span>
+
+</div>
+
+<div class="chat">
+
+<div class="chat-head">
+👑 Bilawal AI • Universal Assistant
+</div>
+
+<div class="messages" id="messages">
+
+<div class="message bot">
+
+Assalam-o-Alaikum! 👋
+
+<br><br>
+
+Tell me what you want to accomplish.
+I can organize your goal into steps and suggest
+the right AI agent or tool.
+
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<button onclick="voiceInput()" title="Voice">
+🎙️
+</button>
+
+<button onclick="fakeFile()" title="File">
+📎
+</button>
+
+<input
+id="chatText"
+placeholder="Ask Bilawal AI anything..."
+>
+
+<button onclick="sendChat()">
+Send
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AGENTS -->
+
+<section id="agents" class="page">
+
+<div class="section-title">
+
+<h2>🤖 AI Agent Center</h2>
+
+<span>Specialized workflows</span>
+
+</div>
+
+<div class="grid" id="agentGrid"></div>
+
+</section>
+
+<!-- TOOLS -->
+
+<section id="tools" class="page">
+
+<div class="section-title">
+
+<h2>🛠️ AI Tools</h2>
+
+<span>50+ tools interface</span>
+
+</div>
+
+<input
+class="search"
+id="toolSearch"
+oninput="filterTools()"
+placeholder="🔎 Search AI tools..."
+>
+
+<div class="categories">
+
+<button class="category active"
+onclick="filterCategory('All',this)">
+All
+</button>
+
+<button class="category"
+onclick="filterCategory('Writing',this)">
+Writing
+</button>
+
+<button class="category"
+onclick="filterCategory('Image',this)">
+Image
+</button>
+
+<button class="category"
+oncli
